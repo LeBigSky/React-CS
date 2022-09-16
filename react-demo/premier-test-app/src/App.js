@@ -1,4 +1,6 @@
+import React from 'react';
 import logo from './logo.svg';
+import shari from './sharingan.png'
 import './App.css';
 
 function App() {
@@ -9,22 +11,12 @@ function App() {
   let mois= datecourante.getMonth()
   let year= datecourante.getFullYear()
   return (
-    
-    <div className="App">
-      <div>
-      <header className="App-header">
-        <img src='sharingan.png' className='App-logo'></img>
-
-<p>temps Javascript est de  {tampJs}</p> 
-<p>et le temps de PHP est de {timephp} </p>
-<p>Nous somme le {jour}/{mois} /{year}</p> 
-  
-      </header>
-
-    </div>
-    <footer>Un site Gary l' Geek</footer>
-</div>
-
+    'Hello React'
+    // <header className='App-header'>
+   
+    //   <img src={shari} className='App-logo'></img>
+    //   <h1 className='App-theBoss'>C'est Gary qui te parle</h1>
+    // </header>
   );
 }
 
