@@ -12,6 +12,11 @@ function App() {
     <div className="App">
     <p> Nous sommes le {jour}/{mois}/{annee} </p>
     <p>Il est {heure} : {minutes}</p>
+
+
+
+    
+    <p>Personal addon for 'git-hub' test purpose</p>
     </div>
   );
 }
