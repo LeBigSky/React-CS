@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Main;
+    src: url('../src/assets/font/Outfit-Black.ttf');
+  }
+  @font-face {
+    font-family: Light;
+    src: url('../src/assets/font/Outfit-Light.ttf');
+  }
+
+body{
+  background-color: hsl(217, 54%, 11%);
+  display: flex;
+  justify-content: center;
+  font-family: Light;
+}
+.MainPageTitle{
+    color: hsl(178, 100%, 50%);
+}
+.separation{
+    width: 90%;
+    border: 1px solid hsl(215, 32%, 27%);
+    background-color: hsl(215, 32%, 27%);
+}

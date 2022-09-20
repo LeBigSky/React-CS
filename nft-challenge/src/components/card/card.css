@@ -1,0 +1,120 @@
+@font-face {
+    font-family: Main;
+    src: url('../../assets/font/Outfit-Black.ttf');
+  }
+  @font-face {
+    font-family: Light;
+    src: url('../../assets/font/Outfit-Light.ttf');
+  }
+.CardTemplate{
+    background-color: hsl(216, 50%, 16%);
+    width: 350px;
+    height: 650px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    box-shadow: 0px 50px 95px hsl(235, 65%, 7%);
+    font-family: Main;
+}
+
+.overimg{
+    margin-top:10px;
+    border-radius: 12px;
+    background-image: url('../../assets/images/image-equilibrium.jpg');
+    background-size: contain;
+    width: 320px;
+    height: 320px;
+}
+
+.CardImg{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 320px;
+    border-radius: 12px;
+    background-image: url('../../assets/images/icon-view.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: hsla(178, 100%, 50%, 0.68);
+    opacity: 0;
+}
+.CardImg:active{
+    opacity: 1;
+}
+
+.CardTitle{
+    display: flex;
+    width: 90%;
+    justify-content: flex-start;
+    color: hsl(0, 0%, 100%);
+}
+.CardTitle:active{
+    color: hsl(178, 100%, 50%);
+}
+.CardTxt{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    text-align: start;
+    color: hsl(215, 51%, 70%);
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    font-family: light;
+}
+.ValueLine{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    
+}
+.ValueEther{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: hsl(178, 100%, 50%);
+    font-size: 18px;
+    font-family: light;
+}
+.ValueEther img{
+    width: 20px;
+    height:20px;
+   
+}
+.Time{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color:hsl(215, 51%, 70%);
+    font-size: 18px;
+    font-family: light;
+}
+.Time img{
+    width: 20px;
+    height:20px;
+}
+.Avatar{
+    Width: 35px;
+    height: 35px;
+    border:2px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+}
+.AvatarLine{
+    display: flex;
+    color: hsl(215, 51%, 70%);
+    align-items: center;
+    width: 90%;
+    gap: 10px;
+    font-family: light;
+}
+.AvatarLine span{
+    padding: 10px;
+    color: hsl(0, 0%, 100%);
+    font-family: light;
+}
