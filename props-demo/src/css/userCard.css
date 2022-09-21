@@ -1,0 +1,23 @@
+.usercardOutline{
+max-width: 20%;
+max-height: 60%;
+}
+
+.usercardDown{
+width: 250px;
+height: 400px;
+background-color: hsl(235, 46%, 20%);
+border-radius:15px ;
+color: white;
+}
+.usercardUp{
+width: 250px;
+height: 300px;
+background-color: hsl(246, 80%, 60%);
+border-radius: 15px;
+color: white;
+}
+.avatar{
+    max-width: 80px;
+    margin-top: 15px;
+}
