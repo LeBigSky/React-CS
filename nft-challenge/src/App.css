@@ -15,6 +15,7 @@ body{
 }
 .MainPageTitle{
     color: hsl(178, 100%, 50%);
+    text-align: center;
 }
 .separation{
     width: 90%;
