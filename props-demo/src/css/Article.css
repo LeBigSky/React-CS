@@ -4,19 +4,19 @@
     display: flex;
     flex-direction: column;
     background-color: hsl(235, 46%, 20%);
-    height: fit-content;
+    /* height: fit-content; */
     justify-content: center;
     width: 100%;
     border-radius: 15px;
-    color: white
+    color: white;
 }
 .work{
     background-image: url('../assets/images/icon-work.svg');
     background-repeat: no-repeat;
-    background-position: top right;
-    background-size: 50px;
+    background-position: 90% -3%;
+    background-size: 65px;
     background-color: hsl(15, 100%, 70%);
-    height: fit-content;
+    height: 200px;
     width: 250px;
     padding-top: 40px;
     border-radius: 15px;
@@ -24,10 +24,10 @@
 .play{
     background-image: url('../assets/images/icon-play.svg');
     background-repeat: no-repeat;
-    background-position: top right;
-    background-size: 50px;
+    background-position: 90% -3%;
+    background-size: 65px;
     background-color: hsl(195, 74%, 62%);
-    height: fit-content;
+    height: 200px;
     width: 250px;
     padding-top: 40px;
     border-radius: 15px;
@@ -35,43 +35,43 @@
 .study{
     background-image: url('../assets/images/icon-study.svg');
     background-repeat: no-repeat;
-    background-position: top right;
-    background-size: 50px;
+    background-position: 90% -3%;
+    background-size: 70px;
     background-color: hsl(348, 100%, 68%);
-    height: fit-content;
+    height: 200px;
     width: 250px;
     padding-top: 40px;
     border-radius: 15px;
 }
 .exercise{
-    background-image: url('../assets/images/icon-work.svg');
+    background-image: url('../assets/images/icon-exercise.svg');
     background-repeat: no-repeat;
-    background-position: top right;
-    background-size: 50px;
-    background-color: hsl(15, 100%, 70%);
-    height: fit-content;
+    background-position: 90% -1%;
+    background-size: 70px;
+    background-color: hsl(145, 58%, 55%);
+    height: 200px;
     width: 250px;
     padding-top: 40px;
     border-radius: 15px;
 }
 .social{
-    background-image: url('../assets/images/icon-work.svg');
+    background-image: url('../assets/images/icon-social.svg');
     background-repeat: no-repeat;
-    background-position: top right;
-    background-size: 50px;
-    background-color: hsl(15, 100%, 70%);
-    height: fit-content;
+    background-position: 90% -1%;
+    background-size: 70px;
+    background-color: hsl(264, 64%, 52%);
+    height: 200px;
     width: 250px;
     padding-top: 40px;
     border-radius: 15px;
 }
 .selfcare{
-    background-image: url('../assets/images/icon-work.svg');
+    background-image: url('../assets/images/icon-self-care.svg');
     background-repeat: no-repeat;
-    background-position: top right;
-    background-size: 50px;
-    background-color: hsl(15, 100%, 70%);
-    height: fit-content;
+    background-position: 90% -5%;
+    background-size: 65px;
+    background-color: hsl(43, 84%, 65%);
+    height: 200px;
     width: 250px;
     padding-top: 40px;
     border-radius: 15px;
@@ -79,15 +79,28 @@
 .titleline{
     display: flex;
     justify-content: space-around;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .timedata{
     display: flex;
     width: 50%;
+    height: 70px;
     justify-content: center;
     font-size: 30px;
     color: white;
-    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .previousdata{
     padding-left: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }

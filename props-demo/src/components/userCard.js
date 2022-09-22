@@ -3,21 +3,24 @@ import '../css/userCard.css';
 import avatar from '../assets/images/image-jeremy.png'
 
 class UserCard extends React.Component{
-    render(){
+   
+    render()
+   
+    { function callz() {
+    alert('yup')
+   }
         return  <div className="usercardOutline">
                      <div className="usercardDown">
                         
                         <div className="usercardUp">
                         <img src={avatar} alt="" className="avatar"/>
-                        <p>Report for</p>
-                        <h2>Username</h2>
-                         
+                        <div className="usertitle">
+                             <h2><span>Report for</span> Jeremy Robson</h2>
                         </div>
-                        <ul>
-                            <li>Daily</li>
-                            <li>Weekly</li>
-                            <li>Monthly</li>
-                        </ul>
+                        </div>
+                            <a className="schedule" onClick={callz}>Daily</a>
+                            <a className="schedule">Weekly</a>
+                            <a className="schedule">Monthly</a> 
                      </div>
                      
                 </div>

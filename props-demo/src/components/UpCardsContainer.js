@@ -5,11 +5,13 @@ import '../css/Upcards.css'
 
 
 class Upcards extends React.Component{
+    currentpage= 'week'
     nombreArticles = "3";
     render() {
        let Title = data.map( element => {
                 return( <div>{ element.timeframes.daily.current }</div>)
         }) 
+        
         let weekly = data.map(element => {
             return( <div>{ element.timeframes.weekly.current }</div>)
     } )

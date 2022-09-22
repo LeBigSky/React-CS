@@ -1,6 +1,7 @@
 import React from "react"
 import data from '../assets/data/data.json'
 import Article from "./Article";
+import '../css/Article.css'
 
 
 class Downcards extends React.Component{

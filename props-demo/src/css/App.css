@@ -1,5 +1,17 @@
 body{
   background-color: hsl(226, 43%, 10%);
-  padding: 30px;
   display: flex;
+  justify-content: center;
+  padding-top: 25vh;
+  align-content: center;
+}
+.cards{
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  gap: 20px;
+}
+.App{
+  display: flex;
+  gap: 25px;
 }

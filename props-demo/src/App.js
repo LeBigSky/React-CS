@@ -5,11 +5,12 @@ import Upcards from './components/UpCardsContainer';
 import Downcards from './components/DownCardsContainer';
 
 function App() {
-  return (
-    <div className="App">
+  return ( <div className="App">
       <UserCard/>
-      <Upcards/>
-      <Downcards/>
+        <div className='cards'> 
+          <Upcards/>
+          <Downcards/>
+        </div>
     </div>
   );
 }
