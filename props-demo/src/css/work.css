@@ -1,0 +1,16 @@
+.backcard{
+    background-image: url('../assets/images/icon-work.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50px;
+    background-color: hsl(15, 100%, 70%);
+    height: 190px;
+    width: 250px;
+    padding-top: 40px;
+    border-radius: 15px;
+}
+.frontcard{
+    background-color: hsl(235, 46%, 20%);
+    height: 100%;
+    border-radius: 15px;
+}

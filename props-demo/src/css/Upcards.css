@@ -1,0 +1,10 @@
+@media screen and (min-width: 375px)and (min-width: 1200px){
+
+    .container div{
+    display: flex;
+    gap: 15px;
+}
+}
+.container div {
+    gap: 15px;
+}

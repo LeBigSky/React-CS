@@ -1,0 +1,93 @@
+
+
+.frontcard{
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(235, 46%, 20%);
+    height: fit-content;
+    justify-content: center;
+    width: 100%;
+    border-radius: 15px;
+    color: white
+}
+.work{
+    background-image: url('../assets/images/icon-work.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50px;
+    background-color: hsl(15, 100%, 70%);
+    height: fit-content;
+    width: 250px;
+    padding-top: 40px;
+    border-radius: 15px;
+}
+.play{
+    background-image: url('../assets/images/icon-play.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50px;
+    background-color: hsl(195, 74%, 62%);
+    height: fit-content;
+    width: 250px;
+    padding-top: 40px;
+    border-radius: 15px;
+}
+.study{
+    background-image: url('../assets/images/icon-study.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50px;
+    background-color: hsl(348, 100%, 68%);
+    height: fit-content;
+    width: 250px;
+    padding-top: 40px;
+    border-radius: 15px;
+}
+.exercise{
+    background-image: url('../assets/images/icon-work.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50px;
+    background-color: hsl(15, 100%, 70%);
+    height: fit-content;
+    width: 250px;
+    padding-top: 40px;
+    border-radius: 15px;
+}
+.social{
+    background-image: url('../assets/images/icon-work.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50px;
+    background-color: hsl(15, 100%, 70%);
+    height: fit-content;
+    width: 250px;
+    padding-top: 40px;
+    border-radius: 15px;
+}
+.selfcare{
+    background-image: url('../assets/images/icon-work.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50px;
+    background-color: hsl(15, 100%, 70%);
+    height: fit-content;
+    width: 250px;
+    padding-top: 40px;
+    border-radius: 15px;
+}
+.titleline{
+    display: flex;
+    justify-content: space-around;
+}
+.timedata{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+.previousdata{
+    padding-left: 15px;
+}
