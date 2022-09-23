@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/Article.css'
-
+import elipse from '../assets/images/icon-ellipsis.svg'
 
 
 
@@ -10,7 +10,7 @@ class Article extends React.Component{
         return <div className={this.props.class}>
                   <div className="frontcard"> 
                     <div className='titleline'>
-                      <h4>{this.props.titre}</h4><img src='../assets/images/icon-ellipsis.svg' alt="" />
+                      <h4>{this.props.titre}</h4><img src={elipse} alt="" />
                     </div>
                     <div className='timedata'>
                       <h2>{this.props.datatime}</h2><h2>hrs</h2>
