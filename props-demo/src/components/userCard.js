@@ -11,7 +11,8 @@ function UserCard(props) {
                          <div className="usercardUp">
                               <img src={avatar} alt="" className="avatar"/>
                          <div className="usertitle">
-                              <h2><span>Report for</span> Jeremy Robson</h2>
+                              <span>Report for</span>
+                              <h2>Jeremy Robson</h2>
                          </div>
                          </div>
                          <div className="links">

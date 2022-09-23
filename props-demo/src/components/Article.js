@@ -12,10 +12,14 @@ class Article extends React.Component{
                     <div className='titleline'>
                       <h4>{this.props.titre}</h4><img src={elipse} alt="" />
                     </div>
-                    <div className='timedata'>
-                      <h2>{this.props.datatime}</h2><h2>hrs</h2>
+                    <div className='datas'>
+                      <div className='timedata'>
+                      <span>{this.props.datatime}</span><span>hrs</span>
+                      </div>
+                      <div className='previousdata'><span>{this.props.previous}</span>
+                      </div>
                     </div>
-                    <div className='previousdata'><span>{this.props.previous}</span></div>
+                    
                   </div>
                 </div>
     }

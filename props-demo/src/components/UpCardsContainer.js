@@ -15,19 +15,19 @@ class Upcards extends React.Component{
         return( <div>{ element.timeframes.weekly.current }</div>)
 } )
     let previous = data.map(element => {
-        return( <div>Last Week : { element.timeframes.weekly.previous }</div>)
+        return( <div>Last Week - { element.timeframes.weekly.previous }hrs</div>)
 } )
     let daily = data.map(element => {
         return( <div>{ element.timeframes.daily.current }</div>)
     })
     let previousD = data.map(element => {
-        return( <div>Last Day : { element.timeframes.daily.previous }</div>)
+        return( <div>Last Day - { element.timeframes.daily.previous }hrs</div>)
 } )
 let monthly = data.map(element => {
     return( <div>{ element.timeframes.monthly.current }</div>)
 })
 let previousM = data.map(element => {
-    return( <div>Last Month : { element.timeframes.monthly.previous }</div>)
+    return( <div>Last Month - { element.timeframes.monthly.previous }hrs</div>)
 } )
     console.log(this.currentpage)
         return (
