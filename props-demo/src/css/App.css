@@ -1,9 +1,15 @@
+@font-face {
+  font-family: RubikMain ;
+  src: url('../assets/font/Rubik-Regular.ttf');
+}
+
 body{
   background-color: hsl(226, 43%, 10%);
   display: flex;
   justify-content: center;
   padding-top: 25vh;
   align-content: center;
+  font-family: RubikMain;
 }
 .cards{
   display: flex;

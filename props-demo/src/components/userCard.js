@@ -14,9 +14,11 @@ function UserCard(props) {
                               <h2><span>Report for</span> Jeremy Robson</h2>
                          </div>
                          </div>
+                         <div className="links">
                               <a className="schedule" onClick={() => props.changeTime('day')}>Daily</a>
                               <a className="schedule" onClick={() => props.changeTime('week')}>Weekly</a>
                               <a className="schedule" onClick={() => props.changeTime('month')}>Monthly</a> 
+                         </div>
                     </div>
                </div>
 }
