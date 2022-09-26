@@ -15,8 +15,15 @@ body {
 }
 
 .table{
-  width: 50vw;
+  width: 80vw;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.result{
+  padding: 30px;
+}
+.jetonsUp{
+  display: flex;
 }

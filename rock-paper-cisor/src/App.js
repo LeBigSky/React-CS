@@ -65,9 +65,13 @@ render(){
         <Header score = {this.state.score}/>
       </header>
       <div className='table'>
-           <Papier parentCallback = {this.handleCallback} type= 'papier'/>
+        <div className='jetonsUp'>
+          <Papier parentCallback = {this.handleCallback} type= 'papier'/>
            <Ciseaux parentCallback = {this.handleCallback} type= 'ciseaux'/>
-           <Pierre parentCallback = {this.handleCallback} type= 'pierre'/>
+        </div>
+           <div className='jetonsDown'>
+          <Pierre parentCallback = {this.handleCallback} type= 'pierre'/>
+           </div>
       </div>
     </div>
   ); 
@@ -79,16 +83,18 @@ render(){
       <header className="App-header">
         <Header score = {this.state.score}/>
       </header>
+      <h1 className='result'>YOU WIN !</h1>
       <div className='table'>
-        <h1>YOU WIN !</h1>
+        <div className='jetonsUp'>
             <span className='playerchoice'>You picked</span>
            <Papier parentCallback = {this.handleCallback} type= 'papier'/>
            <span className='housechoice'>House picked</span>
            <Pierre parentCallback = {this.handleCallback} type='pierre'/>
+        </div>
+          
       </div>
     </div>
   ); 
-
 
  else if ( this.state.choice == "papier" && this.state.house == 'ciseaux' )
  return (
@@ -96,12 +102,15 @@ render(){
     <header className="App-header">
       <Header score = {this.state.score}/>
     </header>
+    <h1 className='result'>YOU LOOSE !</h1>
     <div className='table'>
-    <h1>YOU LOOSE !</h1>
-          <span className='playerchoice'>You picked</span>
+     <div className='jetonsUp'>
+         <span className='playerchoice'>You picked</span>
          <Papier parentCallback = {this.handleCallback} type= 'papier'/>
          <span className='housechoice'>House picked</span>
          <Ciseaux parentCallback = {this.handleCallback} type='ciseaux'/>
+     </div>
+       
     </div>
   </div>
 ); 
