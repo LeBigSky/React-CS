@@ -3,11 +3,11 @@ import '../style/pierre.css'
 
 class Pierre extends React.Component {
      Hola() {
-        alert('hola')
+        alert(this.props.type)
      }
     render()
     {
-        return <div className='pierre' onClick={this.Hola}></div>
+        return <div className='pierre' onClick={this.Hola(this.props)}></div>
 
     }
 }

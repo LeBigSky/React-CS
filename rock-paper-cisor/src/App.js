@@ -6,14 +6,19 @@ import Header from './component/Header';
 import './style/App.css';
 
 function App() {
+  function choice(props) {
+    return alert(props)
+  }
   return (
     <div className="App">
       <header className="App-header">
-      <Header/>
+        <Header/>
       </header>
-      <Ciseaux/>
-      <Papier/>
-      <Pierre/>
+      <div className='table'>
+        <Papier type='papier' choice=''/>
+        <Ciseaux type='ciseaux'/>
+        <Pierre type='pierre'/>
+      </div>
     </div>
   );
 }

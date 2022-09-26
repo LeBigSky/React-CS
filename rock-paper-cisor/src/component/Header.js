@@ -13,7 +13,6 @@ class Header extends React.Component {
             </div>
             <div className='score'></div>
         </div>
-
     }
 }
 

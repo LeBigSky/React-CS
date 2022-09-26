@@ -1,24 +1,24 @@
 .container{
     width: 50vw;
-    height: 250px;
+    height: 120px;
     border: 3px solid white;
     border-radius: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 .score{
     font-size: 20px;
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 140px;
     background-color: aliceblue;
     border-radius: 5px;
 }
 .title{
-    font-size: 55px;
+    font-size: 30px;
     margin:0;
     padding: 0;
     line-height: 2px;
