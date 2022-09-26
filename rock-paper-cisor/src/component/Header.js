@@ -11,7 +11,7 @@ class Header extends React.Component {
                 <h2>PAPER</h2>
                 <h2>SCISSORS</h2>    
             </div>
-            <div className='score'></div>
+            <div className='score'><h2>{this.props.score}</h2></div>
         </div>
     }
 }

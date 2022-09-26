@@ -2,12 +2,12 @@ import React from 'react'
 import '../style/ciseaux.css'
 
 class Ciseaux extends React.Component {
-     Hola() {
-        alert('hola')
-     }
+    cliqued = (event) => {
+        this.props.parentCallback(this.props.type)
+    }
     render()
     {
-        return <div className='scissors' onClick={this.Hola}></div>
+        return <div className='scissors' onClick={this.cliqued}></div>
 
     }
 }
