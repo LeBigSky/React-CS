@@ -14,9 +14,10 @@ class App extends React.Component {
   }
 handleCallback = (data) => {
   this.setState ({choice: data})
-  alert(this.state.choice)
+  this.state.choice= 'papier'
+
   if (this.state.choice == 'papier'){
-    alert('YUP')
+
    let x = Math.floor(Math.random(0)*2)
 
    if (x == 0){
@@ -32,23 +33,25 @@ handleCallback = (data) => {
    
   }
 
-  if (this.state.choice='ciseaux'){
+  if (this.state.choice=='ciseaux'){
+    this.state.choice= 'ciseaux'
     let x = Math.floor(Math.random(0)*2)
     if (x == 0){
-    this.setState ({house: 'pierre'})
+      this.state.house= 'pierre'
     }
     if (x == 1){
-     this.setState ({house: 'papier'})
+      this.state.house= 'papier'
     }
   }
 
-  if (this.state.choice='pierre'){
+  if (this.state.choice=='pierre'){
+    this.state.choice= 'pierre'
     let x = Math.floor(Math.random(0)*2)
     if (x == 0){
-    this.setState ({house: 'ciseaux'})
+      this.state.house= 'ciseaux'
     }
     if (x == 1){
-     this.setState ({house: 'papier'})
+      this.state.house= 'papier'
     }
   }
  
@@ -77,10 +80,11 @@ render(){
         <Header score = {this.state.score}/>
       </header>
       <div className='table'>
+        <h1>YOU WIN !</h1>
             <span className='playerchoice'>You picked</span>
            <Papier parentCallback = {this.handleCallback} type= 'papier'/>
            <span className='housechoice'>House picked</span>
-           <Pierre parentCallback = {this.handleCallback} type= 'pierre'/>
+           <Pierre parentCallback = {this.handleCallback} type='pierre'/>
       </div>
     </div>
   ); 
@@ -93,6 +97,7 @@ render(){
       <Header score = {this.state.score}/>
     </header>
     <div className='table'>
+    <h1>YOU LOOSE !</h1>
           <span className='playerchoice'>You picked</span>
          <Papier parentCallback = {this.handleCallback} type= 'papier'/>
          <span className='housechoice'>House picked</span>
