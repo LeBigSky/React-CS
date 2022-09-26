@@ -2,8 +2,12 @@ import React from 'react'
 import '../style/ciseaux.css'
 
 class Ciseaux extends React.Component {
-    render(){
-        return <div className='scissors'></div>
+     Hola() {
+        alert('hola')
+     }
+    render()
+    {
+        return <div className='scissors' onClick={this.Hola}></div>
 
     }
 }
