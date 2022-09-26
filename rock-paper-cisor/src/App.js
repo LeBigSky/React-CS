@@ -1,5 +1,5 @@
-
-import './App.css';
+import Ciseaux from './component/Ciseaux';
+import './style/App.css';
 
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
       
       </header>
+      <Ciseaux/>
     </div>
   );
 }
