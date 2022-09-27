@@ -21,9 +21,9 @@ class App extends React.Component {
   onResetClick = () => {
    this.handleCallback('')
   }
-onRules = ()=>{
-  this.handleCallback('modal')
-}
+// onRules = ()=>{  A FAIRE CE 28/09 Ajouter la fonction on rules, un state qui change le display du modal onclick
+  
+// }
   onScore = (data) => {
   this.state.score= this.state.score + data
   }
@@ -75,7 +75,7 @@ handleCallback = (data) => {
     if (x == 1){
       this.state.house='papier'
     }
-    if (x == 1){
+    if (x == 2){
       this.state.house='pierre'
     }
   }
@@ -86,7 +86,7 @@ Result = (winner) =>{
   let x = false
   if (winner == 'loose'){
 
- return  <div><h1>YOU LOSE</h1>
+ return  <div><h2>YOU LOSE</h2>
  {this.onScore(-0.5)}
  <button onClick={this.onResetClick}>PLAY AGAIN</button>
  </div> 
@@ -94,14 +94,14 @@ Result = (winner) =>{
   }
   else if (winner == 'win'){
     {this.onScore(+0.5)}
-    return  <div><h1>YOU WIN</h1>
+    return  <div><h2>YOU WIN</h2>
     <button onClick={this.onResetClick}>PLAY AGAIN</button>
     
     </div>
   }
   else if (winner == 'draw'){
    
-    return  <div><h1>D R A W</h1>
+    return  <div><h2>D R A W</h2>
     <button onClick={this.onResetClick}>PLAY AGAIN</button>
     
     </div>
@@ -115,6 +115,16 @@ render()
   if (this.state.choice == "")
   return (
     <div className="App">
+        <div id="Modal" class="kodal">
+    
+    <div class="kodal-content" id="kodal1">
+      <div class="kodal-content-div">
+        <Rules/>
+       </div>
+      
+    </div>
+    
+  </div>
       <header className="App-header">
         <Header score = {this.state.score}/>
       </header>
@@ -127,7 +137,7 @@ render()
           <Pierre parentCallback = {this.handleCallback} type='pierre'/>
            </div>
       </div>
-      <div><button>RULES</button></div>
+      <div className='rules'><button>RULES</button></div>
      
     </div>
     

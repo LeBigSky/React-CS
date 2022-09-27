@@ -9,19 +9,8 @@ class Rules extends React.Component {
     render()
     {
         return <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">RULES</h5>
-              <button type='' onClick={this.handleCallback} >X</button>
-            </div>
-            <div class="modal-body">
+          <div className='topline'><h1>RULES</h1> <span class="close" id="close">&times;</span></div>
               <img src={ Image } alt="" />
-            </div>
-            <div class="modal-footer">
-            </div>
-          </div>
-        </div>
       </div>
     }
 }

@@ -1,6 +1,6 @@
 .container{
     width: 40vw;
-    height: 120px;
+    height: 100px;
     border: 3px solid #54647d;
     border-radius: 15px;
     display: flex;
@@ -14,17 +14,17 @@
 .score{
     font-size: 35px;
     width: 130px;
-    height: 130px;
+    height: 110px;
     background-color: #f8f8f8;
     border-radius: 5px;
-    color: black;
+    color: #58546b;
 }
 .score span{
     font-size: 20px;
 }
 .score h2{
     position: relative;
-    bottom: 35px;
+    bottom: 65px;
 }
 .title{
     font-size: 30px;
