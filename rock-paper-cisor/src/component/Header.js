@@ -1,5 +1,6 @@
 import React from 'react'
 import '../style/header.css'
+import logo from '../assets/images/logo.svg'
 
 class Header extends React.Component {
  
@@ -7,11 +8,9 @@ class Header extends React.Component {
     {
         return <div className='container'>
             <div className='title'>
-                <h2>ROCK</h2>
-                <h2>PAPER</h2>
-                <h2>SCISSORS</h2>    
+                <img src={logo} alt="" />
             </div>
-            <div className='score'><h2>{this.props.score}</h2></div>
+            <div className='score'><span>SCORE</span> <h2>{this.props.score}</h2></div>
         </div>
     }
 }

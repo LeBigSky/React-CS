@@ -2,61 +2,115 @@ import Ciseaux from './component/Ciseaux';
 import Papier from './component/Papier';
 import Pierre from './component/Pierre';
 import Header from './component/Header';
+import Rules from './component/Rules';
+
+
+
 import React from 'react';
   
 import './style/App.css';
 
 class App extends React.Component {
+ 
   state = {
     choice: "",
-    score: "",
+    score: 0,
     house: "",
   }
+
+  onResetClick = () => {
+   this.handleCallback('')
+  }
+onRules = ()=>{
+  this.handleCallback('modal')
+}
+  onScore = (data) => {
+  this.state.score= this.state.score + data
+  }
+
 handleCallback = (data) => {
   this.setState ({choice: data})
-  this.state.choice= 'papier'
+ this.state.choice= data
 
-  if (this.state.choice == 'papier'){
-
-   let x = Math.floor(Math.random(0)*2)
+  if (this.state.choice =='papier'){
+ this.state.choice='papier'
+   let x = Math.floor(Math.random(0)*3)
 
    if (x == 0){
-   this.state.house= 'pierre'
+   this.state.house='pierre'
    console.log(x)
    console.log(this.state)
    }
    
    if (x == 1){
-    this.state.house= 'ciseaux'
+    this.state.house='ciseaux'
     console.log(x)
    }
-   
+   if (x == 2){
+    this.state.house='papier'
+    console.log(x)
+   }
   }
 
   if (this.state.choice=='ciseaux'){
     this.state.choice= 'ciseaux'
-    let x = Math.floor(Math.random(0)*2)
+    let x = Math.floor(Math.random(0)*3)
     if (x == 0){
-      this.state.house= 'pierre'
+      this.state.house='pierre'
     }
     if (x == 1){
-      this.state.house= 'papier'
+      this.state.house='papier'
+    }
+    if (x == 2){
+      this.state.house='ciseaux'
     }
   }
 
   if (this.state.choice=='pierre'){
     this.state.choice= 'pierre'
-    let x = Math.floor(Math.random(0)*2)
+    let x = Math.floor(Math.random(0)*3)
     if (x == 0){
-      this.state.house= 'ciseaux'
+      this.state.house='ciseaux'
     }
     if (x == 1){
-      this.state.house= 'papier'
+      this.state.house='papier'
+    }
+    if (x == 1){
+      this.state.house='pierre'
     }
   }
  
 }
-render(){
+
+Result = (winner) =>{
+  let x = false
+  if (winner == 'loose'){
+
+ return  <div><h1>YOU LOSE</h1>
+ {this.onScore(-0.5)}
+ <button onClick={this.onResetClick}>PLAY AGAIN</button>
+ </div> 
+ 
+  }
+  else if (winner == 'win'){
+    {this.onScore(+0.5)}
+    return  <div><h1>YOU WIN</h1>
+    <button onClick={this.onResetClick}>PLAY AGAIN</button>
+    
+    </div>
+  }
+  else if (winner == 'draw'){
+   
+    return  <div><h1>D R A W</h1>
+    <button onClick={this.onResetClick}>PLAY AGAIN</button>
+    
+    </div>
+  }
+} 
+
+render()
+{ 
+  
                                            //////////////////////////// POINT NEUTRE //////////////////////////////////
   if (this.state.choice == "")
   return (
@@ -66,85 +120,175 @@ render(){
       </header>
       <div className='table'>
         <div className='jetonsUp'>
-          <Papier parentCallback = {this.handleCallback} type= 'papier'/>
-           <Ciseaux parentCallback = {this.handleCallback} type= 'ciseaux'/>
+          <Papier parentCallback = {this.handleCallback} type='papier'/>
+           <Ciseaux parentCallback = {this.handleCallback} type='ciseaux'/>
         </div>
            <div className='jetonsDown'>
-          <Pierre parentCallback = {this.handleCallback} type= 'pierre'/>
+          <Pierre parentCallback = {this.handleCallback} type='pierre'/>
            </div>
       </div>
+      <div><button>RULES</button></div>
+     
     </div>
+    
   ); 
+
+  
+
                                         //////////////////////////// IF PLAYER IS PAPER //////////////////////////////////
 
-  else if ( this.state.choice == 'papier' && this.state.house == 'pierre')
+  else if ( this.state.choice =='papier' && this.state.house =='pierre')
   return (
     <div className="App">
       <header className="App-header">
         <Header score = {this.state.score}/>
       </header>
-      <h1 className='result'>YOU WIN !</h1>
-      <div className='table'>
-        <div className='jetonsUp'>
-            <span className='playerchoice'>You picked</span>
-           <Papier parentCallback = {this.handleCallback} type= 'papier'/>
-           <span className='housechoice'>House picked</span>
-           <Pierre parentCallback = {this.handleCallback} type='pierre'/>
-        </div>
+     
+      <div className='batlle'>
+     <div className='jetonsUp'>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Papier/>
+      </div>
+         <div className='centre'>
+          {this.Result('win')} 
+         </div>
+         <div className='droite'>
+          <span className='housechoice'>House picked</span>
+         <Pierre/>
+         </div>
+     </div>
           
       </div>
     </div>
   ); 
 
- else if ( this.state.choice == "papier" && this.state.house == 'ciseaux' )
+ else if ( this.state.choice == 'papier' && this.state.house =='ciseaux' )
  return (
   <div className="App">
     <header className="App-header">
       <Header score = {this.state.score}/>
     </header>
-    <h1 className='result'>YOU LOOSE !</h1>
-    <div className='table'>
+    
+    <div className='batlle'>
      <div className='jetonsUp'>
-         <span className='playerchoice'>You picked</span>
-         <Papier parentCallback = {this.handleCallback} type= 'papier'/>
-         <span className='housechoice'>House picked</span>
-         <Ciseaux parentCallback = {this.handleCallback} type='ciseaux'/>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Papier/>
+      </div>
+         <div className='centre'>
+          {this.Result('loose')} 
+         </div>
+         <div className='droite'>
+          <span className='housechoice'>House picked</span>
+         <Ciseaux/>
+         </div>
      </div>
        
     </div>
   </div>
 ); 
 
+else if ( this.state.choice == 'papier' && this.state.house =='papier' )
+return (
+ <div className="App">
+   <header className="App-header">
+     <Header score = {this.state.score}/>
+   </header>
+   
+   <div className='batlle'>
+    <div className='jetonsUp'>
+     <div className='gauche'>
+       <span className='playerchoice'>You picked</span>
+        <Papier/>
+     </div>
+        <div className='centre'>
+         {this.Result('draw')} 
+        </div>
+        <div className='droite'>
+         <span className='housechoice'>House picked</span>
+        <Papier/>
+        </div>
+    </div>
+      
+   </div>
+ </div>
+); 
+
                                         //////////////////////////// IF PLAYER IS CISOR  //////////////////////////////////
  
-else if (this.state.choice == "ciseaux" & this.state.house == 'pierre')
+else if (this.state.choice == 'ciseaux' & this.state.house == 'pierre')
  return (
   <div className="App">
     <header className="App-header">
       <Header score = {this.state.score}/>
     </header>
-    <div className='table'>
-          <span className='playerchoice'>You picked</span>
-          <Ciseaux parentCallback = {this.handleCallback} type='ciseaux'/>
-         <span className='housechoice'>House picked</span>
-         <Pierre parentCallback = {this.handleCallback} type='pierre'/>
+
+  <div className='batlle'>
+     <div className='jetonsUp'>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Ciseaux/>
+      </div>
+         <div className='centre'>
+          {this.Result('loose')} 
+         </div>
+         <div className='droite'>
+          <span className='housechoice'>House picked</span>
+         <Pierre/>
+         </div>
+     </div>
     </div>
+    
   </div>
 ); 
 
- else if (this.state.choice == "ciseaux" & this.state.house == 'papier')
+ else if (this.state.choice =='ciseaux' & this.state.house =='papier')
  return (
   <div className="App">
     <header className="App-header">
       <Header score = {this.state.score}/>
     </header>
-    <div className='table'>
-          <span className='playerchoice'>You picked</span>
-          <Ciseaux parentCallback = {this.handleCallback} type= 'ciseaux'/>
-         <span className='housechoice'>House picked</span>
-         <Papier parentCallback = {this.handleCallback} type= 'papier'/>
-    </div>
+    <div className='batlle'>
+     <div className='jetonsUp'>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Ciseaux/>
+      </div>
+         <div className='centre'>
+          {this.Result('win')} 
+         </div>
+         <div className='droite'>
+          <span className='housechoice'>House picked</span>
+         <Papier/>
+         </div>
+     </div>
+</div>
   </div>
+); 
+
+else if (this.state.choice =='ciseaux' & this.state.house =='ciseaux')
+return (
+ <div className="App">
+   <header className="App-header">
+     <Header score = {this.state.score}/>
+   </header>
+   <div className='batlle'>
+    <div className='jetonsUp'>
+     <div className='gauche'>
+       <span className='playerchoice'>You picked</span>
+        <Ciseaux/>
+     </div>
+        <div className='centre'>
+         {this.Result('draw')} 
+        </div>
+        <div className='droite'>
+         <span className='housechoice'>House picked</span>
+        <Ciseaux/>
+        </div>
+    </div>
+</div>
+ </div>
 ); 
 
                                   //////////////////////////// IF PLAYER IS ROCK //////////////////////////////////
@@ -156,15 +300,47 @@ else if (this.state.choice == "ciseaux" & this.state.house == 'pierre')
       <header className="App-header">
         <Header score = {this.state.score}/>
       </header>
-      <div className='table'>
-            <span className='playerchoice'>You picked</span>
-            <Pierre parentCallback = {this.handleCallback} type='pierre'/>
-           <span className='housechoice'>House picked</span>
-           <Ciseaux parentCallback = {this.handleCallback} type='ciseaux'/>
+      <div className='batlle'>
+     <div className='jetonsUp'>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Pierre/>
       </div>
+         <div className='centre'>
+          {this.Result('win')} 
+         </div>
+         <div className='droite'>
+          <span className='housechoice'>House picked</span>
+         <Ciseaux/>
+         </div>
+     </div>
     </div>
+  </div>
   ); 
 
+  else if (this.state.choice == "pierre" & this.state.house == 'pierre')
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Header score = {this.state.score}/>
+      </header>
+      <div className='batlle'>
+     <div className='jetonsUp'>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Pierre/>
+      </div>
+         <div className='centre'>
+          {this.Result('draw')} 
+         </div>
+         <div className='droite'>
+          <span className='housechoice'>House picked</span>
+         <Pierre/>
+         </div>
+     </div>
+    </div>
+  </div>
+  ); 
 
 
  else if (this.state.choice == "pierre" & this.state.house == 'papier')
@@ -173,17 +349,23 @@ else if (this.state.choice == "ciseaux" & this.state.house == 'pierre')
     <header className="App-header">
       <Header score = {this.state.score}/>
     </header>
-    <div className='table'>
-          <span className='playerchoice'>You picked</span>
-          <Pierre parentCallback = {this.handleCallback} type='pierre'/>
-         <span className='housechoice'>House picked</span>
-         <Papier parentCallback = {this.handleCallback} type= 'papier'/>
+    <div className='batlle'>
+     <div className='jetonsUp'>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Pierre/>
+      </div>
+         <div className='centre'>
+          {this.Result('loose')} 
+         </div>
+         <div className='droite'>
+          <span className='housechoice'>House picked</span>
+         <Papier/>
+         </div>
+     </div>
     </div>
   </div>
 ); 
-  
 }
-
 }
-
 export default App;
