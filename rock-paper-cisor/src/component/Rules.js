@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Modal from './Modal'
 
 import '../style/rules.css'
@@ -7,13 +7,20 @@ import '../style/rules.css'
 
 
 class Rules extends React.Component {
-openParent =()=>{
-this.open(this.props.type)
+  state = {
+    displayed: false
+  }
+open =()=>{
+this.setState({displayed: true})
+console.log(this.state.displayed)
+}
+close=()=>{
+  this.setState({displayed:false})
 }
     render()
     {
-        return <div><Modal open='true'/>
-        <div className='rules'><button type='open' onClick={this.openParent}>RULES</button></div>
+        return <div><Modal display={this.state.displayed} close={this.close} />
+        <div className='rules'><button onClick={this.open}>RULES</button></div>
       </div> 
     }
 }

@@ -23,8 +23,8 @@ span{
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4549019608);
@@ -36,11 +36,41 @@ span{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15% auto;
-    padding: 20px;
+    margin: auto;
+    position: relative;
+    top: 30vh;
     border: 1px solid #888;
     border-radius: 2%;
     width: 320px;
     height: 380px;
-    gap: 1vh;
+  }
+
+  .rules{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .rules button{
+    background-color: rgba(255, 255, 255, 0);
+    color: #e9e9e9;
+    border:2px solid #e9e9e9;
+    width: 140px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 650px) {
+
+    .kodal{
+        width: 10%;
+        height: 10%;
+        margin:0
+    }
+    .kodal-content{
+        width: 100vw;
+        height: 100vh;
+        margin:0;
+        background-color: red;
+    }
   }

@@ -153,6 +153,7 @@ render()
      </div>
           
       </div>
+      <Rules/>
     </div>
   ); 
 
@@ -179,6 +180,7 @@ render()
      </div>
        
     </div>
+    <Rules/>
   </div>
 ); 
 
@@ -205,6 +207,7 @@ return (
     </div>
       
    </div>
+   <Rules/>
  </div>
 ); 
 
@@ -232,7 +235,7 @@ else if (this.state.choice === 'ciseaux' & this.state.house === 'pierre')
          </div>
      </div>
     </div>
-    
+    <Rules/>
   </div>
 ); 
 
@@ -257,6 +260,7 @@ else if (this.state.choice === 'ciseaux' & this.state.house === 'pierre')
          </div>
      </div>
 </div>
+<Rules/>
   </div>
 ); 
 
@@ -281,6 +285,7 @@ return (
         </div>
     </div>
 </div>
+<Rules/>
  </div>
 ); 
 
@@ -308,6 +313,7 @@ return (
          </div>
      </div>
     </div>
+    <Rules/>
   </div>
   ); 
 
@@ -332,6 +338,7 @@ return (
          </div>
      </div>
     </div>
+    <Rules/>
   </div>
   ); 
 
@@ -357,6 +364,7 @@ return (
          </div>
      </div>
     </div>
+    <Rules/>
   </div>
 ); 
 }
