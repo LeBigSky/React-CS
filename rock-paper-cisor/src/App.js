@@ -137,7 +137,7 @@ render()
         <Header score = {this.state.score}/>
       </header>
      
-      <div className='batlle'>
+      <div className='battle'>
      <div className='jetonsUp'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
@@ -164,7 +164,7 @@ render()
       <Header score = {this.state.score}/>
     </header>
     
-    <div className='batlle'>
+    <div className='battle'>
      <div className='jetonsUp'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
@@ -191,7 +191,7 @@ return (
      <Header score = {this.state.score}/>
    </header>
    
-   <div className='batlle'>
+   <div className='battle'>
     <div className='jetonsUp'>
      <div className='gauche'>
        <span className='playerchoice'>You picked</span>
@@ -220,7 +220,7 @@ else if (this.state.choice === 'ciseaux' & this.state.house === 'pierre')
       <Header score = {this.state.score}/>
     </header>
 
-  <div className='batlle'>
+  <div className='battle'>
      <div className='jetonsUp'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
@@ -245,7 +245,7 @@ else if (this.state.choice === 'ciseaux' & this.state.house === 'pierre')
     <header className="App-header">
       <Header score = {this.state.score}/>
     </header>
-    <div className='batlle'>
+    <div className='battle'>
      <div className='jetonsUp'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
@@ -270,7 +270,7 @@ return (
    <header className="App-header">
      <Header score = {this.state.score}/>
    </header>
-   <div className='batlle'>
+   <div className='battle'>
     <div className='jetonsUp'>
      <div className='gauche'>
        <span className='playerchoice'>You picked</span>
@@ -298,7 +298,7 @@ return (
       <header className="App-header">
         <Header score = {this.state.score}/>
       </header>
-      <div className='batlle'>
+      <div className='battle'>
      <div className='jetonsUp'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
@@ -323,7 +323,7 @@ return (
       <header className="App-header">
         <Header score = {this.state.score}/>
       </header>
-      <div className='batlle'>
+      <div className='battle'>
      <div className='jetonsUp'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
@@ -349,7 +349,7 @@ return (
     <header className="App-header">
       <Header score = {this.state.score}/>
     </header>
-    <div className='batlle'>
+    <div className='battle'>
      <div className='jetonsUp'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
