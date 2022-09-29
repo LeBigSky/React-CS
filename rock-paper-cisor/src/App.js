@@ -9,11 +9,15 @@ import React from 'react';
 import './style/App.css';
 
 class App extends React.Component {
-
+  sendMessage = (e) => {
+    e.preventDefault();
+    this.timer = setTimeout(() => alert('Hey ??'), 1000);
+  }
   state = {
     choice: "",
     score: 0,
     house: "",
+    time: 3,
   }
 
   onResetClick = () => {
@@ -130,13 +134,12 @@ render()
 
                                         //////////////////////////// IF PLAYER IS PAPER //////////////////////////////////
 
-  else if ( this.state.choice ==='papier' && this.state.house ==='pierre')
+  else if (this.state.choice ==='papier' && this.state.house ==='pierre')
   return (
     <div className="App">
       <header className="App-header">
         <Header score = {this.state.score}/>
       </header>
-     
       <div className='battle'>
      <div className='jetonsUp'>
       <div className='gauche'>
@@ -148,14 +151,14 @@ render()
          </div>
          <div className='droite'>
           <span className='housechoice'>House picked</span>
-         <Pierre/>
+            <Pierre/>
          </div>
      </div>
-          
       </div>
       <Rules/>
     </div>
   ); 
+ 
 
  else if ( this.state.choice === 'papier' && this.state.house ==='ciseaux' )
  return (
@@ -163,7 +166,6 @@ render()
     <header className="App-header">
       <Header score = {this.state.score}/>
     </header>
-    
     <div className='battle'>
      <div className='jetonsUp'>
       <div className='gauche'>
