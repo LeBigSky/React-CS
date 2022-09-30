@@ -69,6 +69,62 @@ body {
   font-weight: bold;
   border-radius: 15px;
 }
+.shadowtoken{
+  width: 150px;
+  height: 150px;
+  background-color:#0f0808;
+  border: 25px solid #151011;
+  box-shadow: 0px 4px 6px 4px #000000, inset 0em 0.4em 4px #292929d3;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  margin: 1em;
+	backface-visibility: visible !important;
+	animation: retournement 1.5s ease infinite;
+}
+@keyframes retournement {
+	0% {
+		transform: perspective(400px) rotateY(0);
+		animation-timing-function: ease-out;
+	}
+	40% {
+		transform: perspective(400px) translateZ(150px) rotateY(170deg);
+		animation-timing-function: ease-out;
+	}
+	50% {
+		transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+		animation-timing-function: ease-in;
+	}
+	80% {
+		transform: perspective(400px) rotateY(360deg) scale(.95);
+		animation-timing-function: ease-in;
+	}
+	100% {
+		transform: perspective(400px) scale(1);
+		animation-timing-function: ease-in;
+	}
+}
+
+.pleasewait{
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  position: relative;
+  top: 115px;
+  width: 150px;
+  height: 60px;
+  background-color:#e9e9e9;
+  color: #58546b;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  animation: fade-out 1.5s linear infinite;
+}
+@keyframes fade-out {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 
 @media screen and (min-width: 320px) and (max-width: 1230px){

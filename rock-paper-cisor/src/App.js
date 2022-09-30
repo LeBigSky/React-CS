@@ -19,9 +19,15 @@ class App extends React.Component {
     house: "",
     time: 3,
   }
+settime= ()=> {
+  setTimeout(() => {
+    this.setState({time:4})
+  }, 4200)}
+
 
   onResetClick = () => {
    this.handleCallback('')
+   this.setState({time:3})
   }
 // onRules = ()=>{  A FAIRE CE 28/09 Ajouter la fonction on rules, un state qui change le display du modal onclick
   
@@ -90,6 +96,7 @@ Result = (winner) =>{
  return  <div><h2>YOU LOSE</h2>
  {this.onScore(-0.5)}
  <button onClick={this.onResetClick}>PLAY AGAIN</button>
+
  </div> 
 
   }
@@ -97,7 +104,7 @@ Result = (winner) =>{
     {this.onScore(+0.5)}
     return  <div><h2>YOU WIN</h2>
     <button onClick={this.onResetClick}>PLAY AGAIN</button>
-    
+
     </div>
   }
   else if (winner === 'draw'){
@@ -134,7 +141,7 @@ render()
 
                                         //////////////////////////// IF PLAYER IS PAPER //////////////////////////////////
 
-  else if (this.state.choice ==='papier' && this.state.house ==='pierre')
+  else if (this.state.choice ==='papier' && this.state.house ==='pierre' && this.state.time === 3)
   return (
     <div className="App">
       <header className="App-header">
@@ -147,228 +154,452 @@ render()
          <Papier/>
       </div>
          <div className='centre'>
-          {this.Result('win')} 
+         <div className='pleasewait'>PLEASE WAIT</div>
          </div>
          <div className='droite'>
-          <span className='housechoice'>House picked</span>
-            <Pierre/>
+    {this.settime()}
+          <span className='playerchoice'>House is chosing . . .</span>
+          <div className='shadowtoken'></div>
          </div>
      </div>
       </div>
       <Rules/>
     </div>
   ); 
+  else if (this.state.choice ==='papier' && this.state.house ==='pierre' && this.state.time === 4)
+return(
+  <div className="App">
+  <header className="App-header">
+    <Header score = {this.state.score}/>
+  </header>
+  <div className='battle'>
+ <div className='jetonsUp'>
+  <div className='gauche'>
+    <span className='playerchoice'>You picked</span>
+     <Papier/>
+  </div>
+     <div className='centre'>
+      {this.Result('win')} 
+     </div>
+     <div className='droite'>
+      <span className='housechoice'>House picked</span>
+        <Pierre/>
+     </div>
+ </div>
+  </div>
+  <Rules/>
+</div>
+); 
+
  
 
- else if ( this.state.choice === 'papier' && this.state.house ==='ciseaux' )
- return (
-  <div className="App">
-    <header className="App-header">
-      <Header score = {this.state.score}/>
-    </header>
-    <div className='battle'>
+else if (this.state.choice ==='papier' && this.state.house ==='ciseaux' && this.state.time === 3)
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Header score = {this.state.score}/>
+      </header>
+      <div className='battle'>
      <div className='jetonsUp'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
          <Papier/>
       </div>
          <div className='centre'>
-          {this.Result('loose')} 
+         <div className='pleasewait'>PLEASE WAIT</div>
          </div>
          <div className='droite'>
-          <span className='housechoice'>House picked</span>
-         <Ciseaux/>
+    {this.settime()}
+          <span className='playerchoice'>House is chosing . . .</span>
+          <div className='shadowtoken'></div>
          </div>
      </div>
-       
+      </div>
+      <Rules/>
     </div>
-    <Rules/>
+  ); 
+  else if (this.state.choice ==='papier' && this.state.house ==='ciseaux' && this.state.time === 4)
+return(
+  <div className="App">
+  <header className="App-header">
+    <Header score = {this.state.score}/>
+  </header>
+  <div className='battle'>
+ <div className='jetonsUp'>
+  <div className='gauche'>
+    <span className='playerchoice'>You picked</span>
+     <Papier/>
   </div>
+     <div className='centre'>
+      {this.Result('loose')} 
+     </div>
+     <div className='droite'>
+      <span className='housechoice'>House picked</span>
+        <Ciseaux/>
+     </div>
+ </div>
+  </div>
+  <Rules/>
+</div>
 ); 
 
-else if ( this.state.choice === 'papier' && this.state.house ==='papier' )
-return (
- <div className="App">
-   <header className="App-header">
-     <Header score = {this.state.score}/>
-   </header>
-   
-   <div className='battle'>
-    <div className='jetonsUp'>
-     <div className='gauche'>
-       <span className='playerchoice'>You picked</span>
+else if (this.state.choice ==='papier' && this.state.house ==='papier' && this.state.time === 3)
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Header score = {this.state.score}/>
+      </header>
+      <div className='battle'>
+     <div className='jetonsUp'>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Papier/>
+      </div>
+         <div className='centre'>
+         <div className='pleasewait'>PLEASE WAIT</div>
+         </div>
+         <div className='droite'>
+    {this.settime()}
+          <span className='playerchoice'>House is chosing . . .</span>
+          <div className='shadowtoken'></div>
+         </div>
+     </div>
+      </div>
+      <Rules/>
+    </div>
+  ); 
+  else if (this.state.choice ==='papier' && this.state.house ==='papier' && this.state.time === 4)
+return(
+  <div className="App">
+  <header className="App-header">
+    <Header score = {this.state.score}/>
+  </header>
+  <div className='battle'>
+ <div className='jetonsUp'>
+  <div className='gauche'>
+    <span className='playerchoice'>You picked</span>
+     <Papier/>
+  </div>
+     <div className='centre'>
+      {this.Result('draw')} 
+     </div>
+     <div className='droite'>
+      <span className='housechoice'>House picked</span>
         <Papier/>
      </div>
-        <div className='centre'>
-         {this.Result('draw')} 
-        </div>
-        <div className='droite'>
-         <span className='housechoice'>House picked</span>
-        <Papier/>
-        </div>
-    </div>
-      
-   </div>
-   <Rules/>
  </div>
+  </div>
+  <Rules/>
+</div>
 ); 
 
                                         //////////////////////////// IF PLAYER IS CISOR  //////////////////////////////////
  
-else if (this.state.choice === 'ciseaux' & this.state.house === 'pierre')
- return (
-  <div className="App">
-    <header className="App-header">
-      <Header score = {this.state.score}/>
-    </header>
 
+else if (this.state.choice ==='ciseaux' && this.state.house ==='pierre' && this.state.time === 3)
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Header score = {this.state.score}/>
+      </header>
+      <div className='battle'>
+     <div className='jetonsUp'>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Ciseaux/>
+      </div>
+         <div className='centre'>
+         <div className='pleasewait'>PLEASE WAIT</div>
+         </div>
+         <div className='droite'>
+    {this.settime()}
+          <span className='playerchoice'>House is chosing . . .</span>
+          <div className='shadowtoken'></div>
+         </div>
+     </div>
+      </div>
+      <Rules/>
+    </div>
+  ); 
+  else if (this.state.choice ==='ciseaux' && this.state.house ==='pierre' && this.state.time === 4)
+return(
+  <div className="App">
+  <header className="App-header">
+    <Header score = {this.state.score}/>
+  </header>
   <div className='battle'>
-     <div className='jetonsUp'>
-      <div className='gauche'>
-        <span className='playerchoice'>You picked</span>
-         <Ciseaux/>
-      </div>
-         <div className='centre'>
-          {this.Result('loose')} 
-         </div>
-         <div className='droite'>
-          <span className='housechoice'>House picked</span>
-         <Pierre/>
-         </div>
-     </div>
-    </div>
-    <Rules/>
+ <div className='jetonsUp'>
+  <div className='gauche'>
+    <span className='playerchoice'>You picked</span>
+     <Ciseaux/>
   </div>
-); 
-
- else if (this.state.choice ==='ciseaux' & this.state.house ==='papier')
- return (
-  <div className="App">
-    <header className="App-header">
-      <Header score = {this.state.score}/>
-    </header>
-    <div className='battle'>
-     <div className='jetonsUp'>
-      <div className='gauche'>
-        <span className='playerchoice'>You picked</span>
-         <Ciseaux/>
-      </div>
-         <div className='centre'>
-          {this.Result('win')} 
-         </div>
-         <div className='droite'>
-          <span className='housechoice'>House picked</span>
-         <Papier/>
-         </div>
+     <div className='centre'>
+      {this.Result('loose')} 
      </div>
-</div>
-<Rules/>
-  </div>
-); 
-
-else if (this.state.choice ==='ciseaux' & this.state.house ==='ciseaux')
-return (
- <div className="App">
-   <header className="App-header">
-     <Header score = {this.state.score}/>
-   </header>
-   <div className='battle'>
-    <div className='jetonsUp'>
-     <div className='gauche'>
-       <span className='playerchoice'>You picked</span>
-        <Ciseaux/>
+     <div className='droite'>
+      <span className='housechoice'>House picked</span>
+        <Pierre/>
      </div>
-        <div className='centre'>
-         {this.Result('draw')} 
-        </div>
-        <div className='droite'>
-         <span className='housechoice'>House picked</span>
-        <Ciseaux/>
-        </div>
-    </div>
-</div>
-<Rules/>
  </div>
+  </div>
+  <Rules/>
+</div>
+); 
+
+else if (this.state.choice ==='ciseaux' && this.state.house ==='papier' && this.state.time === 3)
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Header score = {this.state.score}/>
+      </header>
+      <div className='battle'>
+     <div className='jetonsUp'>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Ciseaux/>
+      </div>
+         <div className='centre'>
+         <div className='pleasewait'>PLEASE WAIT</div>
+         </div>
+         <div className='droite'>
+    {this.settime()}
+          <span className='playerchoice'>House is chosing . . .</span>
+          <div className='shadowtoken'></div>
+         </div>
+     </div>
+      </div>
+      <Rules/>
+    </div>
+  ); 
+  else if (this.state.choice ==='ciseaux' && this.state.house ==='papier' && this.state.time === 4)
+return(
+  <div className="App">
+  <header className="App-header">
+    <Header score = {this.state.score}/>
+  </header>
+  <div className='battle'>
+ <div className='jetonsUp'>
+  <div className='gauche'>
+    <span className='playerchoice'>You picked</span>
+     <Ciseaux/>
+  </div>
+     <div className='centre'>
+      {this.Result('win')} 
+     </div>
+     <div className='droite'>
+      <span className='housechoice'>House picked</span>
+        <Papier/>
+     </div>
+ </div>
+  </div>
+  <Rules/>
+</div>
+); 
+
+else if (this.state.choice ==='ciseaux' && this.state.house ==='ciseaux' && this.state.time === 3)
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Header score = {this.state.score}/>
+      </header>
+      <div className='battle'>
+     <div className='jetonsUp'>
+      <div className='gauche'>
+        <span className='playerchoice'>You picked</span>
+         <Ciseaux/>
+      </div>
+         <div className='centre'>
+         <div className='pleasewait'>PLEASE WAIT</div>
+         </div>
+         <div className='droite'>
+    {this.settime()}
+          <span className='playerchoice'>House is chosing . . .</span>
+          <div className='shadowtoken'></div>
+         </div>
+     </div>
+      </div>
+      <Rules/>
+    </div>
+  ); 
+  else if (this.state.choice ==='ciseaux' && this.state.house ==='ciseaux' && this.state.time === 4)
+return(
+  <div className="App">
+  <header className="App-header">
+    <Header score = {this.state.score}/>
+  </header>
+  <div className='battle'>
+ <div className='jetonsUp'>
+  <div className='gauche'>
+    <span className='playerchoice'>You picked</span>
+     <Ciseaux/>
+  </div>
+     <div className='centre'>
+      {this.Result('draw')} 
+     </div>
+     <div className='droite'>
+      <span className='housechoice'>House picked</span>
+        <Ciseaux/>
+     </div>
+ </div>
+  </div>
+  <Rules/>
+</div>
 ); 
 
                                   //////////////////////////// IF PLAYER IS ROCK //////////////////////////////////
-
-
-  else if (this.state.choice === "pierre" & this.state.house === 'ciseaux')
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Header score = {this.state.score}/>
-      </header>
-      <div className='battle'>
-     <div className='jetonsUp'>
-      <div className='gauche'>
-        <span className='playerchoice'>You picked</span>
-         <Pierre/>
-      </div>
-         <div className='centre'>
-          {this.Result('win')} 
-         </div>
-         <div className='droite'>
-          <span className='housechoice'>House picked</span>
-         <Ciseaux/>
-         </div>
-     </div>
-    </div>
-    <Rules/>
-  </div>
-  ); 
-
-  else if (this.state.choice === "pierre" & this.state.house === 'pierre')
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Header score = {this.state.score}/>
-      </header>
-      <div className='battle'>
-     <div className='jetonsUp'>
-      <div className='gauche'>
-        <span className='playerchoice'>You picked</span>
-         <Pierre/>
-      </div>
-         <div className='centre'>
-          {this.Result('draw')} 
-         </div>
-         <div className='droite'>
-          <span className='housechoice'>House picked</span>
-         <Pierre/>
-         </div>
-     </div>
-    </div>
-    <Rules/>
-  </div>
-  ); 
-
-
- else if (this.state.choice === "pierre" & this.state.house === 'papier')
- return (
+////  R O C K    VS   S C I S S O R S  /////
+else if (this.state.choice ==='pierre' && this.state.house ==='ciseaux' && this.state.time === 3)
+return (
   <div className="App">
     <header className="App-header">
       <Header score = {this.state.score}/>
     </header>
     <div className='battle'>
-     <div className='jetonsUp'>
-      <div className='gauche'>
-        <span className='playerchoice'>You picked</span>
-         <Pierre/>
-      </div>
-         <div className='centre'>
-          {this.Result('loose')} 
-         </div>
-         <div className='droite'>
-          <span className='housechoice'>House picked</span>
-         <Papier/>
-         </div>
-     </div>
+   <div className='jetonsUp'>
+    <div className='gauche'>
+      <span className='playerchoice'>You picked</span>
+       <Pierre/>
+    </div>
+       <div className='centre'>
+       <div className='pleasewait'>PLEASE WAIT</div>
+       </div>
+       <div className='droite'>
+  {this.settime()}
+        <span className='playerchoice'>House is chosing . . .</span>
+        <div className='shadowtoken'></div>
+       </div>
+   </div>
     </div>
     <Rules/>
   </div>
 ); 
+else if (this.state.choice ==='pierre' && this.state.house ==='ciseaux' && this.state.time === 4)
+return(
+<div className="App">
+<header className="App-header">
+  <Header score = {this.state.score}/>
+</header>
+<div className='battle'>
+<div className='jetonsUp'>
+<div className='gauche'>
+  <span className='playerchoice'>You picked</span>
+   <Pierre/>
+</div>
+   <div className='centre'>
+    {this.Result('win')} 
+   </div>
+   <div className='droite'>
+    <span className='housechoice'>House picked</span>
+      <Ciseaux/>
+   </div>
+</div>
+</div>
+<Rules/>
+</div>
+);                          
+////////////
+////  R O C K    VS   P A P E R  /////
+else if (this.state.choice ==='pierre' && this.state.house ==='papier' && this.state.time === 3)
+return (
+  <div className="App">
+    <header className="App-header">
+      <Header score = {this.state.score}/>
+    </header>
+    <div className='battle'>
+   <div className='jetonsUp'>
+    <div className='gauche'>
+      <span className='playerchoice'>You picked</span>
+       <Pierre/>
+    </div>
+       <div className='centre'>
+       <div className='pleasewait'>PLEASE WAIT</div>
+       </div>
+       <div className='droite'>
+  {this.settime()}
+        <span className='playerchoice'>House is chosing . . .</span>
+        <div className='shadowtoken'></div>
+       </div>
+   </div>
+    </div>
+    <Rules/>
+  </div>
+); 
+else if (this.state.choice ==='pierre' && this.state.house ==='papier' && this.state.time === 4)
+return(
+<div className="App">
+<header className="App-header">
+  <Header score = {this.state.score}/>
+</header>
+<div className='battle'>
+<div className='jetonsUp'>
+<div className='gauche'>
+  <span className='playerchoice'>You picked</span>
+   <Pierre/>
+</div>
+   <div className='centre'>
+    {this.Result('loose')} 
+   </div>
+   <div className='droite'>
+    <span className='housechoice'>House picked</span>
+      <Papier/>
+   </div>
+</div>
+</div>
+<Rules/>
+</div>
+);         
+////////////
+////  R O C K    VS   R O C K  /////
+else if (this.state.choice ==='pierre' && this.state.house ==='pierre' && this.state.time === 3)
+return (
+  <div className="App">
+    <header className="App-header">
+      <Header score = {this.state.score}/>
+    </header>
+    <div className='battle'>
+   <div className='jetonsUp'>
+    <div className='gauche'>
+      <span className='playerchoice'>You picked</span>
+       <Pierre/>
+    </div>
+       <div className='centre'>
+       <div className='pleasewait'>PLEASE WAIT</div>
+       </div>
+       <div className='droite'>
+  {this.settime()}
+        <span className='playerchoice'>House is chosing . . .</span>
+        <div className='shadowtoken'></div>
+       </div>
+   </div>
+    </div>
+    <Rules/>
+  </div>
+); 
+else if (this.state.choice ==='pierre' && this.state.house ==='pierre' && this.state.time === 4)
+return(
+<div className="App">
+<header className="App-header">
+  <Header score = {this.state.score}/>
+</header>
+<div className='battle'>
+<div className='jetonsUp'>
+<div className='gauche'>
+  <span className='playerchoice'>You picked</span>
+   <Pierre/>
+</div>
+   <div className='centre'>
+    {this.Result('draw')} 
+   </div>
+   <div className='droite'>
+    <span className='housechoice'>House picked</span>
+      <Pierre/>
+   </div>
+</div>
+</div>
+<Rules/>
+</div>
+);         
+////////////
 }
 }
 export default App;
