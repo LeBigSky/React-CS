@@ -148,7 +148,7 @@ render()
         <Header score = {this.state.score}/>
       </header>
       <div className='battle'>
-     <div className='jetonsUp'>
+     <div className='jeton'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
          <Papier/>
@@ -158,7 +158,7 @@ render()
          </div>
          <div className='droite'>
     {this.settime()}
-          <span className='playerchoice'>House is chosing . . .</span>
+          <span className='playerchoice'>Chosing . . .</span>
           <div className='shadowtoken'></div>
          </div>
      </div>
@@ -173,10 +173,10 @@ return(
     <Header score = {this.state.score}/>
   </header>
   <div className='battle'>
- <div className='jetonsUp'>
+ <div className='jeton'>
   <div className='gauche'>
     <span className='playerchoice'>You picked</span>
-     <Papier/>
+     <div className='winner'><Papier/></div>
   </div>
      <div className='centre'>
       {this.Result('win')} 
@@ -200,7 +200,7 @@ else if (this.state.choice ==='papier' && this.state.house ==='ciseaux' && this.
         <Header score = {this.state.score}/>
       </header>
       <div className='battle'>
-     <div className='jetonsUp'>
+     <div className='jeton'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
          <Papier/>
@@ -210,7 +210,7 @@ else if (this.state.choice ==='papier' && this.state.house ==='ciseaux' && this.
          </div>
          <div className='droite'>
     {this.settime()}
-          <span className='playerchoice'>House is chosing . . .</span>
+          <span className='playerchoice'>Chosing . . .</span>
           <div className='shadowtoken'></div>
          </div>
      </div>
@@ -225,7 +225,7 @@ return(
     <Header score = {this.state.score}/>
   </header>
   <div className='battle'>
- <div className='jetonsUp'>
+ <div className='jeton'>
   <div className='gauche'>
     <span className='playerchoice'>You picked</span>
      <Papier/>
@@ -235,7 +235,7 @@ return(
      </div>
      <div className='droite'>
       <span className='housechoice'>House picked</span>
-        <Ciseaux/>
+        <div className='winner'><Ciseaux/></div>
      </div>
  </div>
   </div>
@@ -250,17 +250,17 @@ else if (this.state.choice ==='papier' && this.state.house ==='papier' && this.s
         <Header score = {this.state.score}/>
       </header>
       <div className='battle'>
-     <div className='jetonsUp'>
+     <div className='jeton'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
          <Papier/>
       </div>
          <div className='centre'>
-         <div className='pleasewait'>PLEASE WAIT</div>
+         <button className='pleasewait'><h4>PLEASE WAIT</h4></button>
          </div>
          <div className='droite'>
     {this.settime()}
-          <span className='playerchoice'>House is chosing . . .</span>
+          <span className='playerchoice'>Chosing . . .</span>
           <div className='shadowtoken'></div>
          </div>
      </div>
@@ -275,7 +275,7 @@ return(
     <Header score = {this.state.score}/>
   </header>
   <div className='battle'>
- <div className='jetonsUp'>
+ <div className='jeton'>
   <div className='gauche'>
     <span className='playerchoice'>You picked</span>
      <Papier/>
@@ -303,7 +303,7 @@ else if (this.state.choice ==='ciseaux' && this.state.house ==='pierre' && this.
         <Header score = {this.state.score}/>
       </header>
       <div className='battle'>
-     <div className='jetonsUp'>
+     <div className='jeton'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
          <Ciseaux/>
@@ -313,7 +313,7 @@ else if (this.state.choice ==='ciseaux' && this.state.house ==='pierre' && this.
          </div>
          <div className='droite'>
     {this.settime()}
-          <span className='playerchoice'>House is chosing . . .</span>
+          <span className='playerchoice'>Chosing . . .</span>
           <div className='shadowtoken'></div>
          </div>
      </div>
@@ -328,7 +328,7 @@ return(
     <Header score = {this.state.score}/>
   </header>
   <div className='battle'>
- <div className='jetonsUp'>
+ <div className='jeton'>
   <div className='gauche'>
     <span className='playerchoice'>You picked</span>
      <Ciseaux/>
@@ -338,7 +338,7 @@ return(
      </div>
      <div className='droite'>
       <span className='housechoice'>House picked</span>
-        <Pierre/>
+       <div className='winner'><Pierre/></div> 
      </div>
  </div>
   </div>
@@ -353,7 +353,7 @@ else if (this.state.choice ==='ciseaux' && this.state.house ==='papier' && this.
         <Header score = {this.state.score}/>
       </header>
       <div className='battle'>
-     <div className='jetonsUp'>
+     <div className='jeton'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
          <Ciseaux/>
@@ -363,7 +363,7 @@ else if (this.state.choice ==='ciseaux' && this.state.house ==='papier' && this.
          </div>
          <div className='droite'>
     {this.settime()}
-          <span className='playerchoice'>House is chosing . . .</span>
+          <span className='playerchoice'>Chosing . . .</span>
           <div className='shadowtoken'></div>
          </div>
      </div>
@@ -378,10 +378,10 @@ return(
     <Header score = {this.state.score}/>
   </header>
   <div className='battle'>
- <div className='jetonsUp'>
+ <div className='jeton'>
   <div className='gauche'>
     <span className='playerchoice'>You picked</span>
-     <Ciseaux/>
+     <div className='winner'><Ciseaux/></div>
   </div>
      <div className='centre'>
       {this.Result('win')} 
@@ -403,7 +403,7 @@ else if (this.state.choice ==='ciseaux' && this.state.house ==='ciseaux' && this
         <Header score = {this.state.score}/>
       </header>
       <div className='battle'>
-     <div className='jetonsUp'>
+     <div className='jeton'>
       <div className='gauche'>
         <span className='playerchoice'>You picked</span>
          <Ciseaux/>
@@ -413,7 +413,7 @@ else if (this.state.choice ==='ciseaux' && this.state.house ==='ciseaux' && this
          </div>
          <div className='droite'>
     {this.settime()}
-          <span className='playerchoice'>House is chosing . . .</span>
+          <span className='playerchoice'>Chosing . . .</span>
           <div className='shadowtoken'></div>
          </div>
      </div>
@@ -428,7 +428,7 @@ return(
     <Header score = {this.state.score}/>
   </header>
   <div className='battle'>
- <div className='jetonsUp'>
+ <div className='jeton'>
   <div className='gauche'>
     <span className='playerchoice'>You picked</span>
      <Ciseaux/>
@@ -455,7 +455,7 @@ return (
       <Header score = {this.state.score}/>
     </header>
     <div className='battle'>
-   <div className='jetonsUp'>
+   <div className='jeton'>
     <div className='gauche'>
       <span className='playerchoice'>You picked</span>
        <Pierre/>
@@ -465,7 +465,7 @@ return (
        </div>
        <div className='droite'>
   {this.settime()}
-        <span className='playerchoice'>House is chosing . . .</span>
+        <span className='playerchoice'>Chosing . . .</span>
         <div className='shadowtoken'></div>
        </div>
    </div>
@@ -480,10 +480,10 @@ return(
   <Header score = {this.state.score}/>
 </header>
 <div className='battle'>
-<div className='jetonsUp'>
+<div className='jeton'>
 <div className='gauche'>
   <span className='playerchoice'>You picked</span>
-   <Pierre/>
+   <div className='winner'><Pierre/></div>
 </div>
    <div className='centre'>
     {this.Result('win')} 
@@ -506,7 +506,7 @@ return (
       <Header score = {this.state.score}/>
     </header>
     <div className='battle'>
-   <div className='jetonsUp'>
+   <div className='jeton'>
     <div className='gauche'>
       <span className='playerchoice'>You picked</span>
        <Pierre/>
@@ -516,7 +516,7 @@ return (
        </div>
        <div className='droite'>
   {this.settime()}
-        <span className='playerchoice'>House is chosing . . .</span>
+        <span className='playerchoice'>Chosing . . .</span>
         <div className='shadowtoken'></div>
        </div>
    </div>
@@ -531,7 +531,7 @@ return(
   <Header score = {this.state.score}/>
 </header>
 <div className='battle'>
-<div className='jetonsUp'>
+<div className='jeton'>
 <div className='gauche'>
   <span className='playerchoice'>You picked</span>
    <Pierre/>
@@ -541,7 +541,7 @@ return(
    </div>
    <div className='droite'>
     <span className='housechoice'>House picked</span>
-      <Papier/>
+      <div className='winner'><Papier/></div>
    </div>
 </div>
 </div>
@@ -557,7 +557,7 @@ return (
       <Header score = {this.state.score}/>
     </header>
     <div className='battle'>
-   <div className='jetonsUp'>
+   <div className='jeton'>
     <div className='gauche'>
       <span className='playerchoice'>You picked</span>
        <Pierre/>
@@ -567,7 +567,7 @@ return (
        </div>
        <div className='droite'>
   {this.settime()}
-        <span className='playerchoice'>House is chosing . . .</span>
+        <span className='playerchoice'>Chosing . . .</span>
         <div className='shadowtoken'></div>
        </div>
    </div>
@@ -582,7 +582,7 @@ return(
   <Header score = {this.state.score}/>
 </header>
 <div className='battle'>
-<div className='jetonsUp'>
+<div className='jeton'>
 <div className='gauche'>
   <span className='playerchoice'>You picked</span>
    <Pierre/>

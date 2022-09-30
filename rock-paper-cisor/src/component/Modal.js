@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Image from '../assets/images/image-rules.svg'
 import '../style/rules.css'
+import close from '../assets/images/icon-close.svg'
 import Rules from './Rules'
 
 class Modal extends React.Component {
@@ -10,7 +11,7 @@ class Modal extends React.Component {
   <div className="kodal-content" id="kodal1">
     <div className="kodal-content-div">
     <div className="modal" tabIndex="-1">
-          <div className='topline'><h1>RULES</h1> <span className="close" onClick={this.props.close} id="close">&times;</span></div>
+          <div className='topline'><h1>RULES</h1> <span className="close" onClick={this.props.close} id="close"><img className='close' src={close} alt="" /></span></div>
               <img src={ Image } alt="" />
       </div>
      </div>

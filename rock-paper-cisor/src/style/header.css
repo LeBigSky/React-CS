@@ -9,6 +9,7 @@
     padding: 30px;
     margin: auto;
     margin-bottom: 30px;
+    z-index: 1;
    
 }
 .score{
@@ -18,6 +19,7 @@
     background-color: #f8f8f8;
     border-radius: 5px;
     color: #58546b;
+    z-index: 1;
 }
 .score span{
     font-size: 20px;
@@ -34,3 +36,26 @@
     line-height: 2px;
     text-align: left;
 }
+
+@media screen and (min-width: 320px) and (max-width: 1024px){
+.title img{
+    width: 100px;
+}
+.container{
+    padding: 10px;
+}
+.score{
+    height: 80px;
+    width: 100px;
+}
+.score span{
+    font-size: 20px;
+    position: relative;
+    bottom:12px;
+}
+.score h2{
+    font-size: 40px;
+    position: relative;
+    bottom: 63px;
+}
+  }
