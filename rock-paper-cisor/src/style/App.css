@@ -6,8 +6,6 @@
 .App {
   text-align: center;
   margin: auto;
-  width: 100%;
-  height: 100%;
 }
 
 body {
@@ -15,6 +13,7 @@ body {
   background: linear-gradient(180deg, rgba(29,48,80,1) 29%, rgb(2, 24, 62) 80%);
   background-repeat: no-repeat; 
   background-attachment: fixed;
+
   display: flex;
   padding: 30px;
   margin: 0;
@@ -173,29 +172,41 @@ z-index: -1;
   .rules{
     position: relative;
     justify-content: center;
-    top: 200px;
+    top: 50px;
   }
   .table{
     background-size: 250px;
     height: 300px;
   }
-  .center{
-  padding-left: 0;
-  padding-right: 0;
+  .centre{
+  padding-left: 0px;
+  padding-right: 0px;
   justify-content: center;
-  margin: auto;
+  padding: 0;
+
+  }
+  .centre h2{
+    font-size: 50px;
+    width: 250px;
+    margin: 0;
   }
   .centre button{
-    width: 150px;
+    width: 250px;
+    height: 60px
   }
   .pleasewait{
    width:150px;
   }
 .jeton{
-  width: 570px;
+  width: 450px;
 }
-.housechoice{
-
+.gauche, .droite {
+ display: flex;
+ flex-direction: column-reverse; 
+ margin-bottom: 50px;
+}
+.playerchoice, .housechoice{
+  margin-top: 20px;
 }
 .shadowtoken{
   width: 100px;
