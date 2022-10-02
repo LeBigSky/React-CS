@@ -2,7 +2,7 @@
     width: 40vw;
     height: 100px;
     border: 3px solid #54647d;
-    border-radius: 15px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,7 +42,8 @@
     width: 100px;
 }
 .container{
-    padding: 10px;
+    padding: 15px;
+    width: 60vw;
 }
 .score{
     height: 80px;
