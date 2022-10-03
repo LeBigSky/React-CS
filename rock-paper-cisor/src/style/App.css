@@ -89,6 +89,7 @@ body {
   height: 50px;
   gap: 15px;
   margin-bottom: 15px;
+  z-index: 2;
 }
 .centre button{
   width: 200px;
@@ -112,6 +113,7 @@ body {
   background-size: 60%;
 	backface-visibility: visible !important;
 	animation: retournement 1.5s ease infinite;
+  z-index: -1;
 }
 @keyframes retournement {
 	0% {

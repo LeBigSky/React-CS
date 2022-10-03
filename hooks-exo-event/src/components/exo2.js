@@ -12,6 +12,12 @@ let handlekey= (event)=>{
         alert('yup')
     }
 }
+let Onfocus=(event) =>{
+    event.currentTarget.style.backgroundColor = "green";
+}
+let Onblur=(event) => {
+    event.currentTarget.style.backgroundColor = "";
+}
 const copyHandler = (event: React.ClipboardEvent<HTMLInputElement>) => {
     alert(event.target.value);
   };
@@ -19,7 +25,7 @@ const copyHandler = (event: React.ClipboardEvent<HTMLInputElement>) => {
     return(
 <div><h1>EXO 2</h1>
 <p>{text.text}</p>
-<input type="texte" onKeyDown={handlekey} onCopy={copyHandler}/>
+<input type="texte" onKeyDown={handlekey} onCopy={copyHandler} onFocus={Onfocus} onBlur={Onblur}/>
 </div>
     );
 }

@@ -13,7 +13,8 @@ function App() {
    <div>
     <Exo1/>
     <Exo2 onCopy={copyHandler}/>
-    <Exo5/></div>
+    <Exo5/>
+   </div>
   );
 }
 
