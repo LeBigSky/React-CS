@@ -20,12 +20,12 @@ let rename= () => {
   })
 }
 
-const [cara] = useState ([
-  {orientation:"Gaming", models: "Pc portable", marque: "AlienWare"},
+const [cara, setCara] = useState ([
+  {orientation:"Gaming", models: "Pc portable", marque: "AlienWeere"},
   {orientation:"Gaming", models: "Pc portable", marque: "Asuz"},
-  {orientation:"Bureautique", models: "Pc portable", marque: "Acer"},
-  {orientation:"Media", models: "Pc Tour", marque: "Medion"},
-  {orientation:"Multitâches", models: "Pc All-in-One", marque: "Hp"}
+  {orientation:"Bureautique", models: "Pc portable", marque: "Acerre"},
+  {orientation:"Media", models: "Pc Tour", marque: "Medium"},
+  {orientation:"Multitâches", models: "Pc All-in-One", marque: "Ph"}
 ])
 
   return (
