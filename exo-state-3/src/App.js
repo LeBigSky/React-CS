@@ -26,13 +26,9 @@ changeColor=()=>{
    <div>{arraylenght}{this.changeColor()}
    <div><button onClick={this.removeEl}>Click</button></div>
    <div><h1>{this.state.array[0]} {this.state.array[1]} {this.state.array[2]} {this.state.array[3]} {this.state.array[4]}  </h1></div>
- 
    </div>
     </div>
   );
-
   }
-
 }
-
 export default App;
