@@ -4,13 +4,13 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 20vw;
+    width: 315px;
     border: 1px solid grey;
     border-radius: 15px;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.409);
 }
 .card img{
-    max-width: 20vw;
+    max-width: 300px;
     border-radius: 15px;
 }
 .Descriptif, .Titre{
@@ -21,4 +21,22 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+button{
+    background-color: rgb(75, 153, 75);
+    border: 2px solid azure;
+    border-radius: 8px;
+    width: 90px;
+    height: 30px;
+    color: azure;
+  
+}
+.card h3{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.card span{
+    border: 1px solid grey;
+    padding: 5px;
 }

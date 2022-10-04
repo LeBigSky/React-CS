@@ -1,0 +1,42 @@
+.header {
+    background-color: #0a3782;
+    height: 120px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.header img {
+    max-width: 150px;
+    height: 100px;
+    position: relative;
+}
+.link{
+    background-color: #001e69;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.link a{
+    color: white;
+    font-size: 20px;
+    width: 200px;
+    border-right: 1px solid white;
+    padding: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.firstline{
+    display: flex;
+    justify-content: center;
+    color:azure;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+h1{
+    position: relative;
+    top: 15px;
+    right: 50px;
+}
