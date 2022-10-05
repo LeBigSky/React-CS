@@ -12,30 +12,34 @@ const [rouge, setthecolor] =useState(true);
 const [isShown, setIsShown] = useState(true);
 
 
-    let achat=(props)=>{
+ 
+    let Setcolor=(props)=>{
+
     
-        if(articleStock.stock >= 1){
+        if(props>= 1){
             props.stock=Number(props.stock);
-            setstock({stock: articleStock.stock -1 }) ;
+            setstock({stock: props.stock -1 }) ;
         }
-        if(articleStock.stock < 3){
+        else if(props < 3){
             setcolor(current => !current);
         }
-        if (articleStock.stock < 2){
+        else if (props< 2){
             setIsShown(current => !current);
             setthecolor(current => !current)
         }
-          }
+    }
    
   return (
+    
 <div className='card' style={{backgroundColor: orange ? rouge? 'white' : 'red' : 'orange'}}>
+ 
     <img src={props.img}alt=""/>
         <div className=''>
             <h2 className='Titre'>{props.type} {props.marque}</h2>
             <p className='Descriptif'>{props.description}</p>
             <div className='card-end-line'>
                 <button style={{display: isShown ? 'block' : 'none'}} onClick={props.achat}>Ajouter au panier</button>
-                <h3 className='Prix'><p>STOCK:</p><span>{articleStock.stock}</span> <p>PRIX:</p><span>{price.price}</span></h3>
+                <h3 className='Prix'><p>STOCK:</p><span>{props.stock}</span> <p>PRIX:</p><span>{props.prix}</span></h3>
             </div>
         </div> 
 </div>
