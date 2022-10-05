@@ -50,7 +50,6 @@ const [isShown, setIsShown] = useState(true);
 setUserMoney({userMoney: userMoney - Prix[0]})
   }
  const achat=(props)=>{
-alert(userMoney.money - props.prix)
 setUserMoney({money: userMoney.money - props.prix})
 props.stock = props.stock -1
  }

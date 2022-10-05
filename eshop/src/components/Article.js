@@ -5,25 +5,19 @@ import '../style/Articles.css'
 
 export default function Article(props) {
 
-let [price, setPrice] = useState({price:props.prix});
-let [articleStock, setstock] = useState({stock: props.stock});
+let [stock]= useState({number:props.stock})
 const [orange, setcolor] =useState(true);
 const [rouge, setthecolor] =useState(true);
 const [isShown, setIsShown] = useState(true);
 
-
+console.log(props.stock)
  
-    let Setcolor=(props)=>{
+    let Setcolor=(stock)=>{
 
-    
-        if(props>= 1){
-            props.stock=Number(props.stock);
-            setstock({stock: props.stock -1 }) ;
-        }
-        else if(props < 3){
+        if(stock.number < 3){
             setcolor(current => !current);
         }
-        else if (props< 2){
+        else if (stock.number < 2){
             setIsShown(current => !current);
             setthecolor(current => !current)
         }
@@ -32,7 +26,7 @@ const [isShown, setIsShown] = useState(true);
   return (
     
 <div className='card' style={{backgroundColor: orange ? rouge? 'white' : 'red' : 'orange'}}>
- 
+
     <img src={props.img}alt=""/>
         <div className=''>
             <h2 className='Titre'>{props.type} {props.marque}</h2>
