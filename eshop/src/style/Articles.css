@@ -10,7 +10,7 @@
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.409);
 }
 .card img{
-    max-width: 300px;
+    width: 300px;
     border-radius: 15px;
 }
 .Descriptif, .Titre{
@@ -23,6 +23,7 @@
     justify-content: space-around;
 }
 button{
+    display: block;
     background-color: rgb(75, 153, 75);
     border: 2px solid azure;
     border-radius: 8px;

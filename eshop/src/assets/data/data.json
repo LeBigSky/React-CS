@@ -4,20 +4,24 @@
       "type": "Pc Portable",
       "description":"La nouvelle gamme X d’Alienware, qui comprend nos ordinateurs portables de jeu de 15 po et de 17 po les plus minces, repousse toutes les limites et est dotée des innovations Cryo-Tech exclusives.",
       "prix": 14,
-      "stock": 1
+      "stock": 4,
+      "img": "../img/alienwarePNG.PNG"
     },
     {
         "marque": "Alienware",
         "type": "Casque",
         "description":"La nouvelle gamme de casque Alienware vous procure un confort sans egal ! le système surround et le Dobly Atmos sont prpulsé grâce a technologie Garies Crew.",
         "prix": 7,
-        "stock": 3
+        "stock": 3,
+        "img": "../img/Casque.PNG"
       },
       {
         "marque": "Alienware",
-        "type": "Sacoche Pc",
-        "description":"La nouvelle sacoche pour ordinateurs portables d'Alienware pue la classe et impose le respect.",
+        "type": "Sac à dos Pc",
+        "description":"La nouveau sac à dos pour ordinateurs portables d'Alienware pue la classe et impose le respect.",
         "prix": 3,
-        "stock": 2
+        "stock": 2,
+        "img": "../img/Bag.PNG"
+
       }
 ]

@@ -1,36 +1,41 @@
-import Laptop  from '../assets/img/alienwarePNG.PNG'
-import React,{useState} from 'react'
+
+import React,{ useState } from 'react'
 
 import '../style/Articles.css'
 
 export default function Article(props) {
-    let [userMoney, setUserMoney] = useState({money:20});
-let [price, setPrice] = useState({price:0});
-let [articleStock, setstock] = useState({stock:3});
 
-    let acheter=(props)=>{
-       
-        if(articleStock.stock > 0){
+let [price, setPrice] = useState({price:props.prix});
+let [articleStock, setstock] = useState({stock: props.stock});
+const [orange, setcolor] =useState(true);
+const [rouge, setthecolor] =useState(true);
+const [isShown, setIsShown] = useState(true);
+
+
+    let achat=(props)=>{
+    
+        if(articleStock.stock >= 1){
+            props.stock=Number(props.stock);
             setstock({stock: articleStock.stock -1 }) ;
         }
-        else{
-            alert("Désolé ce produit n'est plus de stock")
+        if(articleStock.stock < 3){
+            setcolor(current => !current);
+        }
+        if (articleStock.stock < 2){
+            setIsShown(current => !current);
+            setthecolor(current => !current)
         }
           }
-          if(articleStock.stock < 1){
-            document.querySelector('span').style.backgroundColor='red'
-            document.querySelector('button').style.backgroundColor='red'
-            document.querySelector('button').innerText='Indisponible'    
-        }
+   
   return (
-<div className='card'>
-    <img src={Laptop}alt=""/>
+<div className='card' style={{backgroundColor: orange ? rouge? 'white' : 'red' : 'orange'}}>
+    <img src={props.img}alt=""/>
         <div className=''>
             <h2 className='Titre'>{props.type} {props.marque}</h2>
             <p className='Descriptif'>{props.description}</p>
             <div className='card-end-line'>
-                <button onClick={acheter}>Acheter</button>
-                <h3 className='Prix'><p>STOCK:</p><span>{articleStock.stock}</span> <p>PRIX:</p><span>14</span></h3>
+                <button style={{display: isShown ? 'block' : 'none'}} onClick={props.achat}>Ajouter au panier</button>
+                <h3 className='Prix'><p>STOCK:</p><span>{articleStock.stock}</span> <p>PRIX:</p><span>{price.price}</span></h3>
             </div>
         </div> 
 </div>
