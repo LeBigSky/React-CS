@@ -1,38 +1,34 @@
 
-import React,{ useState } from 'react'
+import React from 'react'
 
 import '../style/Articles.css'
 
 export default function Article(props) {
-
-let [stock]= useState({number:props.stock})
-const [orange, setcolor] =useState(true);
-const [rouge, setthecolor] =useState(true);
-const [isShown, setIsShown] = useState(true);
-
-console.log(stock.number)
- 
-    let Setcolor=(props)=>{
-alert (props)
-        // if(stock.number < 3){
-        //     setcolor(current => !current);
-        // }
-        // else if (stock.number < 2){
-        //     setIsShown(current => !current);
-        //     setthecolor(current => !current)
-        // }
-    }
-   
   return (
-    
-<div className='card' style={{backgroundColor: orange ? rouge? 'white' : 'red' : 'orange'}}>
+<div className='card' >
     <img src={props.img}alt=""/>
         <div className=''>
-            <h2 className='Titre'>{props.type} {props.marque}</h2>
-            <p className='Descriptif'>{props.description}</p>
-            <div className='card-end-line'>
-                <button style={{display: isShown ? 'block' : 'none'}} onClick={props.achat}>Ajouter au panier</button>
-                <h3 className='Prix'><p>STOCK:</p><span onChange={()=>Setcolor(props.stock)}>{props.stock}</span> <p>PRIX:</p><span>{props.prix}</span></h3>
+            {props.stock >= 2 && // ICI J'UTILISE UNIQUEMENT DE L'AFFICHAGE CONDITIONNEL POUR RENDER MON ARTICLE SELON LES CONDITIONS
+            <div style={{ backgroundColor: 'white'}}>
+                 <h2 className='Titre'>{props.type} {props.marque}</h2>
+                 <p className='Descriptif'>{props.description}</p>
+                 <h3 className='Prix'><p>STOCK:</p><span>{props.stock}</span> <p>PRIX:</p><span>{props.prix}</span></h3>
+            </div>}
+            {props.stock === 1 && // SI IL NE RESTE Q'UN OBJET EN STOCK =>
+            <div style={{ backgroundColor: 'orange'}}>
+                 <h2 className='Titre'>{props.type} {props.marque}</h2>
+                 <p className='Descriptif'>{props.description}</p>
+                 <h3 className='Prix'><p>STOCK:</p><span>{props.stock}</span> <p>PRIX:</p><span>{props.prix}</span></h3>
+            </div>}
+            {props.stock < 1 && // SI IL RESTE MOINS Q'UN OBJET EN STOCK DONC 0 =>
+            <div style={{ backgroundColor: 'red'}}>
+                 <h2 className='Titre'>{props.type} {props.marque}</h2>
+                 <p className='Descriptif'>{props.description}</p>
+                 <h3 className='Prix'><p>STOCK:</p><span>{props.stock}</span> <p>PRIX:</p><span>{props.prix}</span></h3>
+            </div>}
+            {/* SI LE SOLDE USER EST >= AU PRIX => */}
+            <div className='card-end-line'> 
+            {props.usermoney >= props.prix && <button onClick={props.achat}>Ajouter au panier</button>} 
             </div>
         </div> 
 </div>

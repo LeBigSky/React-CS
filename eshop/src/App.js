@@ -9,60 +9,47 @@ import data from '../src/assets/data/data.json'
 
 export default function App() {
 
-  let [articles, setArticle] = useState(
-    {"marque": "Alienware","type": "Pc Portable", "prix": 4},
-    {"marque": "Acer","type": "Pc Portable", "prix": 8},
-    {"marque": "Asuz","type": "Pc Portable", "prix": 2}
-  )
-
-  /////////////// IMPORTATION DE MES ARTICLES
-  let Marque = data.map( element => {
-    return( <div>{ element.marque }</div>)
-}) 
-let Type= data.map( element => {
-  return( <div>{ element.type }</div>)
-}) 
-let Descriptif= data.map( element => {
-  return (<div>{ element.description}</div>)
-})
-let Prix= data.map( element => {
-  return element.prix
-})
-let Stock= data.map( element => {
-  return element.stock
-})
-let Image= data.map( element => {
-  return element.img
-})
-////////////////////////////////////////////////////
-
-
 let [userMoney, setUserMoney] = useState({money:20});
-let [stock, setStock] = useState({stock: data.stock})
-let [price, setprice] = useState({price:Prix})
-let Panier=[];
 
-const [orange, setcolor] =useState(true);
-const [rouge, setthecolor] =useState(true);
-const [isShown, setIsShown] = useState(true);
+const [panier, setPanier] = useState([]); 
 
-
- const achat=(props)=>{
-  if (userMoney.money >= props.prix){
-    setUserMoney({money: userMoney.money - props.prix})
-props.stock = props.stock -1
+ const achat=(index)=>{
+  let article=data.map(element =>(element))
+  if (userMoney.money >= article[index].prix && article[index].stock >0){
+    setUserMoney({money: userMoney.money - article[index].prix});
+    article[index].stock -=1;
+    panier.push(article[index]);
+    console.log(panier)
+   
+    
   }
-
  }
 
-  
+let supprimer = (index) => {
+  console.log(panier)
+panier.splice(index,1);
+}
   return (
 <div>
   <Header money={userMoney.money}/>
-  <div className='articles'>
-    {data.map(element =>(
-      <Article marque={element.marque} type={element.type} description={element.description} prix={element.prix} stock={element.stock} img={element.img} achat={() => achat(element)}/>
-    ))}
+  <div className='container'>
+      <div className='articles'>
+          {data.map((element, index) =>( 
+             <Article key={index} marque={element.marque} type={element.type} description={element.description} prix={element.prix} stock={element.stock} img={element.img} achat={() => achat(index)} usermoney={userMoney.money}/>
+          ))}
+     
+      </div>
+      <div className='panier'>
+        <h1>VOTRE PANIER CONTIENS :</h1>
+        {panier.length === 0 &&
+        <h4>ACTUELLEMENT AUCUN ARTICLE </h4>
+        }
+            {panier.map((element, index) => {
+            return (
+                    <Paniers key={index} article={element} delete={()=>supprimer(index)} />
+                   );
+                })}
+      </div>
   </div>
 </div>
   );
