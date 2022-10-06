@@ -46,12 +46,13 @@ const [orange, setcolor] =useState(true);
 const [rouge, setthecolor] =useState(true);
 const [isShown, setIsShown] = useState(true);
 
- let decreaseMoney=()=>{
-setUserMoney({userMoney: userMoney - Prix[0]})
-  }
+
  const achat=(props)=>{
-setUserMoney({money: userMoney.money - props.prix})
+  if (userMoney.money >= props.prix){
+    setUserMoney({money: userMoney.money - props.prix})
 props.stock = props.stock -1
+  }
+
  }
 
   
