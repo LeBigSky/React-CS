@@ -19,15 +19,16 @@ const [panier, setPanier] = useState([]);
     setUserMoney({money: userMoney.money - article[index].prix});
     article[index].stock -=1;
     panier.push(article[index]);
-    console.log(panier)
-   
-    
+    setPanier(panier)
+    console.log(panier) 
   }
  }
-
 let supprimer = (index) => {
   console.log(panier)
-panier.splice(index,1);
+  let copiePanier = panier;
+  console.log(copiePanier)
+  panier.splice(index, 1);
+  setPanier(copiePanier);
 }
   return (
 <div>
@@ -37,7 +38,6 @@ panier.splice(index,1);
           {data.map((element, index) =>( 
              <Article key={index} marque={element.marque} type={element.type} description={element.description} prix={element.prix} stock={element.stock} img={element.img} achat={() => achat(index)} usermoney={userMoney.money}/>
           ))}
-     
       </div>
       <div className='panier'>
         <h1>VOTRE PANIER CONTIENS :</h1>
@@ -51,6 +51,7 @@ panier.splice(index,1);
                 })}
       </div>
   </div>
+  <Footer/>
 </div>
   );
 }
