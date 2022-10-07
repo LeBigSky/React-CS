@@ -15,7 +15,7 @@ export default function Panier(props) {
           <div className='article'>
               <img className='img' src={props.article.img} alt="" />
               
-              <div className='article-side'><h4 className="name">{props.article.marque}</h4>
+              <div className='article-side'><h4 className="name">{props.article.marque} {props.article.type}</h4>
                < p className="price"><span className="font-weight-bold">Prix :</span> {props.article.prix}</p> 
               <p className='quantite'> Quantité :{props.article.quantite}</p>
               </div>

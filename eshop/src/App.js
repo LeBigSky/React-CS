@@ -41,14 +41,8 @@ let supprimer = (index) => {
     setUserMoney({money: userMoney.money + newvalue })
     article[article.indexOf(copiePanier[index])].quantite= quantie - quantie
     article[article.indexOf(copiePanier[index])].stock= article[article.indexOf(copiePanier[index])].stock + quantie
-    // setUserMoney({money: userMoney.money + value });
   }
-  // else if (article[article.indexOf(copiePanier[index])].quantite > 1)
-  // {
-  //   newvalue= value * [article.indexOf(copiePanier[index])].quantite 
-  //   setUserMoney({money: userMoney.money + newvalue })
-  // }
-  
+
   copiePanier.splice(index, 1);
   setPanier(copiePanier);
  
@@ -63,7 +57,6 @@ let augment=(index)=>{
   article[article.indexOf(copiePanier[index])].stock--
   console.log(value)
   setUserMoney({money: userMoney.money - value })
-  // copiePanier.splice(index, 1);
   }
 }
 let decrease=(index)=>{
