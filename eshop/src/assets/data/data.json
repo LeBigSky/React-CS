@@ -6,6 +6,7 @@
       "description":"La nouvelle gamme X d’Alienware, qui comprend nos ordinateurs portables de jeu de 15 po et de 17 po les plus minces, repousse toutes les limites et est dotée des innovations Cryo-Tech exclusives.",
       "prix": 14,
       "stock": 4,
+      "quantite":0,
       "img": "../img/alienwarePNG.PNG"
     },
     {
@@ -15,6 +16,7 @@
         "description":"La nouvelle gamme de casque Alienware vous procure un confort sans egal ! le système surround et le Dobly Atmos sont prpulsé grâce a technologie Garies Crew.",
         "prix": 7,
         "stock": 3,
+        "quantite":0,
         "img": "../img/Casque.PNG"
       },
       { 
@@ -24,6 +26,7 @@
         "description":"La nouveau sac à dos pour ordinateurs portables d'Alienware pue la classe et impose le respect.",
         "prix": 3,
         "stock": 2,
+        "quantite":0,
         "img": "../img/Bag.PNG"
 
       }

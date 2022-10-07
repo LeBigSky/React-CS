@@ -1,26 +1,47 @@
 .panier{
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
+
+    gap: 5px;
     border: 1px solid black;
     background-color: #00000000;
     color: black;
 }
 img{
-    width: 150px;
+    width: 120px;
 }
 .article{
-    width :400px;
+    width: 100%;
     height: 150px;
     display: flex;
     flex-direction: row;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
   
 }
 .button{
     background-color: rgba(152, 29, 29, 0.863);
+    position: relative;
+    left: 10%;
 }
 .conteneur{
     background-color: rgba(0, 0, 0, 0.447);
     color: white;
+}
+.article-side{
+    display: flex;
+    flex-direction: column;
+}
+.butplus{
+ width: 50px;
+ height: 40px;
+ background-color: rgba(128, 128, 128, 0.578);
+ color: black;
+}
+.butminus{
+width: 50px;
+height: 40px;
+background-color: rgba(128, 128, 128, 0.578);
+color: black;
 }

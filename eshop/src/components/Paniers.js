@@ -13,11 +13,17 @@ export default function Panier(props) {
       <div>
         <div className="panier">
           <div className='article'>
-              <img src={props.article.img} alt="" />
-              <h4 className="name">{props.article.marque}</h4>
-              <p className="price"><span className="font-weight-bold">Prix :</span> {props.article.prix}</p>
+              <img className='img' src={props.article.img} alt="" />
+              
+              <div className='article-side'><h4 className="name">{props.article.marque}</h4>
+               < p className="price"><span className="font-weight-bold">Prix :</span> {props.article.prix}</p> 
+              <p className='quantite'> Quantité :{props.article.quantite}</p>
+              </div>
+              <button className='butplus' onClick={props.augment}>+</button>
+              <button className='butminus' onClick={props.decrease}>-</button>
               <button  className="button" onClick={props.delete}>Supprimer</button>
           </div>
+          
         </div>
       </div>
     )
