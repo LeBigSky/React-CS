@@ -1,7 +1,7 @@
 .panier{
     width: 100%;
     display: flex;
-
+    flex-wrap: wrap;
     gap: 5px;
     border: 1px solid black;
     background-color: #00000000;
@@ -32,6 +32,7 @@ img{
 .article-side{
     display: flex;
     flex-direction: column;
+    width: 25%;
 }
 .butplus{
  width: 50px;
@@ -44,4 +45,17 @@ width: 50px;
 height: 40px;
 background-color: rgba(128, 128, 128, 0.578);
 color: black;
+}
+@media screen and (min-width: 320px) and (max-width:750px) {
+    img{
+     width:100px;
+  }
+  .article{
+    flex-wrap: wrap;
+    height: fit-content;
+  }
+  .article-side{
+   
+    width: 50%;
+}
 }

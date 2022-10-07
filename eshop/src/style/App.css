@@ -1,16 +1,22 @@
 .App {
   text-align: center;
+  padding:0;
+  margin: 0;
 }
 .articles{
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
   
 }
 .container{
   display: flex;
   width: 100%;
+  justify-content: center;
   padding: 30px;
   gap: 50px;
+  flex-wrap: wrap;
 }
 .panier{
   display: flex;
@@ -20,8 +26,41 @@
   align-items: center;
   border-radius: 15px;
 }
+.panier h2{
+  border: 2px solid #001e69;
+  border-radius: 10px;
+  padding: 17px;
+  background-color: #0a3782;
+  color: lightgrey;
+  width:85%;
+  text-align: center;
+}
+.panier h2 span{
+  color: white;
+}
+.panier h1{
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 0;
+  position: relative;
+  left: 15px;
+}
 button{
   background-color: rgb(192, 151, 6);
   width: 150px;
   height: 50px;
+}
+@media screen and (min-width: 320px) and (max-width:750px) {
+  .panier{
+    display: flex;
+    width: 320px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .panier h1 , .panier h2{
+    font-size: 15px;
+    text-align: center;
+  }
 }

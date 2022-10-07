@@ -11,7 +11,7 @@ export default function App() {
 
 let [userMoney, setUserMoney] = useState({money:20});
 let [panier, setPanier] = useState([]); 
-
+let valeurpanier= 20 - userMoney.money
  const achat=(index)=>{
   
   let article=data.map(element =>(element))
@@ -81,6 +81,7 @@ let decrease=(index)=>{
           ))}
       </div>
       <div className='panier'>
+        
         <h1>VOTRE PANIER CONTIENS :</h1>
         {panier.length === 0 &&
         <h4>ACTUELLEMENT AUCUN ARTICLE </h4>
@@ -89,7 +90,7 @@ let decrease=(index)=>{
             return (
                     <Paniers key={index} article={element} delete={()=>supprimer(index)} augment={() => augment(index)} decrease={() =>decrease(index)} />
                    );
-                })}
+                })}<h2>Prix total de votre panier: <span>{valeurpanier} €</span></h2>
       </div>
   </div>
   <Footer/>

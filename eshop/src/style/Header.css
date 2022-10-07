@@ -18,7 +18,7 @@
 }
 .link a{
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     width: 200px;
     border-right: 1px solid white;
     padding: 5px;
@@ -26,6 +26,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#solde{
+font-size: 25px;
 }
 .firstline{
     display: flex;
@@ -35,7 +38,7 @@
     padding: 0;
     margin: 0;
 }
-h1{
+h1, h4{
     position: relative;
     top: 15px;
     right: 50px;
