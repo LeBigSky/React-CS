@@ -3,7 +3,7 @@ import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import './App.css';
 import Countries from './components/Countries'
 import Header from './components/Header';
-import Home from './components/home';
+import Home from './page/Home';
 
 function App() {
   return (
@@ -14,7 +14,6 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/countries" element={<Countries/>}/>
             <Route path="*" element={<Home/>}/>
-            
         </Routes>
     </BrowserRouter>
 </div>

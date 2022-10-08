@@ -1,0 +1,22 @@
+.countrycard{
+    background-color: hsl(0, 0%, 100%);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    margin-bottom: 100px;
+}
+.countrycard img{
+    width: 350px;
+    height: 220px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+.countrydata{
+    padding-left: 25px;
+}
+.countries{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
