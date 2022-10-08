@@ -7,9 +7,9 @@ export default function Card(props) {
             <img src="" alt="" />
             <div className='container'></div>
             <ul>
-                <li>{props}</li>
-                <li></li>
-                <li></li>
+                <li>BELGIUM</li>
+                <li>EXEMPLE</li>
+                <li>EXEMPLE</li>
             </ul>
 
         </div>

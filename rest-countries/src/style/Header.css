@@ -1,0 +1,13 @@
+.header{
+    display:flex;
+    justify-content: space-around;
+    gap: 50%;
+    background-color: hsl(0, 0%, 98%);
+    color: black;
+    border-bottom: 2px solid hsl(0, 2%, 77%);
+}
+.darkmode{
+    display:flex;
+    align-items: center;
+    gap: 15px;
+}

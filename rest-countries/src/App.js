@@ -1,15 +1,23 @@
 import React from 'react'
-import {Route, BrowserRouter, Switch} from 'react-router-dom';
+import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import './App.css';
-import Countrycard from './components/Countrycard'
+import Countries from './components/Countries'
+import Header from './components/Header';
+import Home from './components/home';
 
 function App() {
   return (
+  <div>
+    <Header/>
     <BrowserRouter>
-    <switch>
-    <Countrycard/>
-    </switch>
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/countries" element={<Countries/>}/>
+            <Route path="*" element={<Home/>}/>
+            
+        </Routes>
     </BrowserRouter>
+</div>
   );
 }
 
