@@ -10,8 +10,6 @@ export default function Header(props) {
             <i className="fa-regular fa-moon"></i>
             <h4>DARK MODE</h4>
         </div>
-        
-
     </div>
     )
 }

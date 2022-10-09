@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../style/Countries.css'
+import Card from './Card';
+
 
 export default function Countries(props) {
     const [data, setData]= useState([])
@@ -8,23 +10,12 @@ export default function Countries(props) {
     useEffect(() => {
         axios.get("https://restcountries.com/v2/all").then((res) => setData(res.data));
     }, [])//callback [] permet de rappeler le code si il y a un event
-
+    
     return(
         <div className='countries'>
                 {
                     data.map((pays, index) => (
-                        <div className='countrycard'>
-                            <img src={pays.flag} alt="" />
-                            <div className='countrydata'>
-                                <h2>{pays.name}</h2>
-                                <h4>Population: {pays.population}</h4>
-                                <h4>Region:{pays.region}</h4>
-                                <h4>Capitale: {pays.capital}</h4>
-                            </div>
-                            
-
-                        </div>
-                    
+                <Card key={index} pays={pays} id={index}/>
                     ))};
         </div>
     )
